@@ -1,11 +1,11 @@
 @import './../variables.scss';
 
 .nextView {
-  width: 40%;
-  height: 35%;
-  position: relative;
-  left: 57.5%;
-  border-radius: 26px;
-  top: 5%;
-  background-color: rgb(0, 0, 0);
+  width: $next_width;
+  height: $next_height;
+  position: $next_position;
+  left: $next_left;
+  border-radius: $next_border-radius;
+  top: $next_top;
+  background-color: $next_background-color;
 }
