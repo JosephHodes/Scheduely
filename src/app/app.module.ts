@@ -9,13 +9,15 @@ import { CommonModule } from '@angular/common';
 
 import { DayCalendarComponent } from './day-calendar/day-calendar.component';
 import { NextViewComponent } from './next-view/next-view.component';
+import { SevenDayCalanderComponent } from './seven-day-calander/seven-day-calander.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     calendarComponent,
     DayCalendarComponent,
-    NextViewComponent
+    NextViewComponent,
+    SevenDayCalanderComponent
   ],
   imports: [
     BrowserModule,

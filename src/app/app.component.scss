@@ -1,1 +1,9 @@
+$backgroundcolor:rgb(165, 161, 161);
 
+.MainPage {
+  background-color: $backgroundcolor;
+  width: 96%;
+  height: 93%;
+  margin: 2%;
+  border-radius: 26px;
+}

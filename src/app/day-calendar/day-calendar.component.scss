@@ -1,0 +1,7 @@
+@import './../variables.scss';
+
+.dayComp {
+  width: $day_width;
+  height: $day_height;
+  background-color: $day_color;
+}
