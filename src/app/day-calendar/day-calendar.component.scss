@@ -1,7 +1,10 @@
 @import './../variables.scss';
-
 .dayComp {
-  width: $day_width;
-  height: $day_height;
-  background-color: $day_color;
+    display: inline-block;
+    width: 46vw;
+    height: 40vh;
+    background-color: $day_color;
+    margin-top: 20px;
+    margin-left: 5%;
+    border-radius: 26px;
 }

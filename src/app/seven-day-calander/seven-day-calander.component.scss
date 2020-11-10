@@ -1,11 +1,73 @@
 @import './../variables.scss';
-
 .Component {
-  background-color: $seven_background-color;
-  height: $seven_height;
-  width: $seven_width;
-  position: $seven_position;
-  top: $seven_top;
-  left: $seven_left;
-  border-radius: $seven_border-radious;
+    margin: 20px;
+    background-color: $seven_background-color;
+    height: $seven_height;
+    width: $seven_width;
+    border-radius: $seven_border-radious;
+    justify-content: space-evenly;
+    padding: 10px;
+    margin-left: 2vw;
+}
+
+.day {
+    flex: 1;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 43vh;
+    width: 11vw;
+    background-color: blue;
+    border-radius: 26px;
+    margin-top: 2vh;
+    margin-left: 1.1vw;
+}
+
+.scrollcontent {
+    overflow-y: scroll;
+    max-height: 31.9vh;
+    list-style: none;
+    border-bottom-left-radius: 26px;
+    border-bottom-right-radius: 26px;
+    padding-left: .5vw;
+}
+
+.gap {
+    width: 10.1vw;
+    height: .2vh;
+    border-radius: 12;
+    margin-left: .6vw;
+    margin-top: .5vh;
+    background-color: white;
+}
+
+.titleofdaybac {
+    margin-top: 19vh;
+}
+
+.titleofday {
+    text-align: center;
+    font-size: 2vw;
+    padding-top: .3vh;
+}
+
+.classesbackground {
+    height: 4vh;
+    margin-top: 2vh;
+    padding-left: 20;
+    text-size-adjust: 100px;
+    background-color: white;
+    border-radius: 12px;
+}
+
+.classes {
+    text-align: center;
+    font-size: small;
+    padding-top: .8vh;
+}
+
+.flex-container {
+    width: $flexcont-width;
+    height: $flexcont-height;
+    display: $flexcont-display;
+    flex-direction: $flexcont-direction;
 }

@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 import { DayCalendarComponent } from './day-calendar/day-calendar.component';
 import { NextViewComponent } from './next-view/next-view.component';
 import { SevenDayCalanderComponent } from './seven-day-calander/seven-day-calander.component';
+import { NgScrollbarModule } from 'ngx-scrollbar';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { SevenDayCalanderComponent } from './seven-day-calander/seven-day-caland
     FormsModule,
     BrowserAnimationsModule,
     MatGridListModule,
-    CommonModule
+    CommonModule, NgScrollbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

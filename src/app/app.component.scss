@@ -1,9 +1,15 @@
-$backgroundcolor:rgb(165, 161, 161);
+@import './variables.scss';
+.mainPage {
+    background-color: $mainPage_background-color;
+    width: $mainPage_width;
+    height: $mainPage_height;
+    margin: $mainPage_margin;
+    border-radius: $mainPage_border-radious;
+}
 
-.MainPage {
-  background-color: $backgroundcolor;
-  width: 96%;
-  height: 93%;
-  margin: 2%;
-  border-radius: 26px;
+.flex-container {
+    width: $flexcont-width;
+    height: $flexcont-height;
+    display: $flexcont-display;
+    flex-direction: $flexcont-direction;
 }

@@ -1,3 +1,23 @@
-<div class="Component" >
+<div class="Component">
+    <div class="flex-container">
+        <li *ngFor="let i of days;let m = index;" style="list-style: none;">
 
+            <div class="day">
+                <div class="titleofday">
+                    <h1 class="titleofday">{{days[m].weekday}}</h1>
+                </div>
+
+                <div class="gap"></div>
+                <div class="scrollcontent">
+
+                    <li *ngFor="let man of days[m].classes; let x =index">
+                        <div class="classesbackground">
+                            <h3 class='classes'>{{days[m].classes[x]}}</h3>
+                        </div>
+                    </li>
+
+                </div>
+            </div>
+        </li>
+    </div>
 </div>

@@ -1,22 +1,39 @@
 //day calender
-$day_width:10%;
-$day_height:20%;
+$day_width:50vh;
+$day_height:100%;
 $day_color: black;
+$dat_position:relative;
+$dat_top:3%;
+$dat_left:12%;
+
 
 //nextview
-$next_width:40%;
-$next_height:35%;
-$next_position:relative;
-$next_left:57.5%;
+$next_width:50vh;
+$next_height:100%;
+$next_position:static;
+$next_left:100%;
 $next_border-radius: 26px;
-$next_top: 5%;
+$next_top: 3%;
 $next_background-color:rgb(0, 0, 0);
 
 //7 day component | .component class 
 $seven_background-color: rgb(35, 54, 35);
 $seven_height: 50%;
-$seven_width: 95%;
+$seven_width: 91vw;
 $seven_position: relative;
-$seven_top: 8%;
-$seven_left: 2.5%;
+$seven_top: 5vh;
+$seven_left: 2vw;
 $seven_border-radious: 26px;
+
+// mainpage 
+$mainPage_background-color:rgb(165, 161, 161);
+$mainPage_width: 95vw;
+$mainPage_height: 95vh;
+$mainPage_margin: 2%;
+$mainPage_border-radious:26px;
+
+//mainpage | flex container
+$flexcont-width: 100%;
+$flexcont-height: 43%;
+$flexcont-display:flex;
+$flexcont-direction:row;
