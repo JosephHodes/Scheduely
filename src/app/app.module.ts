@@ -25,7 +25,7 @@ import { NgScrollbarModule } from 'ngx-scrollbar';
     FormsModule,
     BrowserAnimationsModule,
     MatGridListModule,
-    CommonModule, NgScrollbarModule
+    CommonModule, NgScrollbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

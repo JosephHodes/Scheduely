@@ -1,3 +1,13 @@
 <div class="dayComp">
-  
+    <div class="todaysday">
+        {{days[todaysday].weekday}}
+    </div>
+    <div class="gap"></div>
+    <div>
+        <li *ngFor="let classes of days[todaysday].classes; index as x" style="list-style: none;">
+            <div>
+                {{days[todaysday].classes[x]}}
+            </div>
+        </li>
+    </div>
 </div>

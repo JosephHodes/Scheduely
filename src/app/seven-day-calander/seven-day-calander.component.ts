@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Clases, test } from './../classes'
-import { } from 'luxon'
-import { getLocaleFirstDayOfWeek } from '@angular/common';
+
 @Component({
   selector: 'app-seven-day-calendar',
   templateUrl: './seven-day-calander.component.html',
@@ -39,37 +38,7 @@ export class SevenDayCalanderComponent implements OnInit {
   //     classes: ['']
   //   }
   // ]
-  days: Clases[] = [
-    {
-      weekday: 'Monday',
-      classes: ['Math', 'English', 'Physics', 'English', 'Physics', 'English', 'Physics', 'English', 'Physics']
-    },
-    {
-      weekday: 'Tuesday',
-      classes: ['Music', 'Art', 'Gym']
-    },
-    {
-      weekday: 'Wednesday',
-      classes: ['Math', 'English', 'Physics']
-    },
-    {
-      weekday: 'Thursday',
-      classes: ['Music', 'Art', 'Gym']
-    },
-    {
-      weekday: 'Friday',
-      classes: ['Math', 'English']
-    },
-    {
-      weekday: 'Saturday',
-      classes: []
-    },
-    {
-      weekday: 'Sunday',
-      classes: []
-    },
-  ]
-
+  @Input('days') days: Clases[];
   convert12to24(time: string,) {
     let splitTime = time.split(' ');
 

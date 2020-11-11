@@ -71,3 +71,16 @@
     display: $flexcont-display;
     flex-direction: $flexcont-direction;
 }
+
+.scrollbar {
+    --scrollbar-color: transparent;
+    --scrollbar-container-color: transparent;
+    --scrollbar-thumb-color: rgba(0, 0, 0, 0.2);
+    --scrollbar-thumb-hover-color: rgba(0, 0, 0, 0.3);
+    --scrollbar-border-radius: 4px;
+    --scrollbar-size: 6px;
+    --scrollbar-padding: 8px;
+    --scroll-view-margin: 0;
+    --scroll-view-color: transparent;
+    --scroll-view-height: 10px;
+}

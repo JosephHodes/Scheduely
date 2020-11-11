@@ -8,16 +8,19 @@
                 </div>
 
                 <div class="gap"></div>
-                <div class="scrollcontent">
+                <!-- <div class="scrollcontent"> -->
 
+                <ng-scrollbar class="scrollbar">
                     <li *ngFor="let man of days[m].classes; let x =index">
+
                         <div class="classesbackground">
                             <h3 class='classes'>{{days[m].classes[x]}}</h3>
                         </div>
                     </li>
-
-                </div>
+                </ng-scrollbar>
+                <!-- </div> -->
             </div>
+
         </li>
     </div>
 </div>
