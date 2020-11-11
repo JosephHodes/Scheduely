@@ -1,42 +1,44 @@
 @import './../variables.scss';
 .Component {
-    margin: 20px;
-    background-color: $seven_background-color;
-    height: $seven_height;
-    width: $seven_width;
-    border-radius: $seven_border-radious;
+    background-color: #3282b8;
+    // height: $seven_height;
+    // width: $seven_width;
+    // border-radius: $seven_border-radious;
     justify-content: space-evenly;
-    padding: 10px;
-    margin-left: 2vw;
+    align-self: center;
 }
 
 .day {
-    flex: 1;
-    flex-direction: row;
     flex-wrap: nowrap;
     height: 43vh;
-    width: 11vw;
-    background-color: blue;
-    border-radius: 26px;
-    margin-top: 2vh;
-    margin-left: 1.8vw;
+    width: auto;
+    background-color: #bbe1fa;
+    border-radius: 12px;
+    margin: .5vw;
+    padding: .5vw;
 }
 
 .scrollcontent {
-    overflow-y: scroll;
-    max-height: 31.9vh;
+    overflow-y: auto;
+    max-height: 17.2vw;
     list-style: none;
-    border-bottom-left-radius: 26px;
-    border-bottom-right-radius: 26px;
+    border-bottom-left-radius: 12px;
+    flex-direction: column;
+    border-bottom-right-radius: 12px;
     padding-left: .5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scrollcontent::-webkit-scrollbar {
+    width: 10px;
 }
 
 .gap {
-    width: 10.1vw;
-    height: .2vh;
+    width: 8vw;
+    align-self: center;
     border-radius: 12;
-    margin-left: .6vw;
-    margin-top: .5vh;
     background-color: white;
 }
 
@@ -53,7 +55,6 @@
 .classesbackground {
     height: 4vh;
     margin-top: 2vh;
-    padding-left: 20;
     text-size-adjust: 100px;
     background-color: white;
     border-radius: 12px;
@@ -66,10 +67,8 @@
 }
 
 .flex-container {
-    width: $flexcont-width;
-    height: $flexcont-height;
-    display: $flexcont-display;
-    flex-direction: $flexcont-direction;
+    display: flex;
+    flex-direction: row;
 }
 
 .scrollbar {

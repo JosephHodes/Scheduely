@@ -1,7 +1,10 @@
-<div class="mainPage">
-    <div class="flex-container">
-        <app-day-calendar [days]="days"></app-day-calendar>
-        <app-next-view></app-next-view>
+<main>
+    <div class="mainPage">
+
+        <div class="top">
+            <app-day-calendar [days]="days" class="tl"></app-day-calendar>
+            <app-next-view class="tr"></app-next-view>
+        </div>
+        <app-seven-day-calendar [days]="days" class="b"></app-seven-day-calendar>
     </div>
-    <app-seven-day-calendar [days]="days"></app-seven-day-calendar>
-</div>
+</main>

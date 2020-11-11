@@ -1,9 +1,10 @@
 @import './../variables.scss';
 .nextView {
-    width: 44.55vw;
-    height: 40vh;
-    margin-left: 3vw;
-    margin-top: 20px;
-    border-radius: $next_border-radius;
-    background-color: $next_background-color;
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+    // margin-left: 3vw;
+    // margin-top: 20px;
+    //     border-radius: $next_border-radius;
+    //     background-color: $next_background-color;
 }
