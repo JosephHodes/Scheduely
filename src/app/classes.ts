@@ -1,4 +1,4 @@
-export interface Clases {
+export interface Classes {
     weekday: string;
     classes: Array<string>;
 }

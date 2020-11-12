@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { Clases } from './classes'
+import { Classes } from './classes'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  days: Clases[] = [
+  days: Classes[] = [
     {
       weekday: 'Monday',
       classes: ['Math', 'English', 'Physics', 'English', 'Physics', 'English', 'Physics', 'English', 'Physics']
