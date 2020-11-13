@@ -1,43 +1,53 @@
 @import './../variables.scss';
 .Component {
-    margin: 20px;
-    background-color: $seven_background-color;
-    height: $seven_height;
-    width: $seven_width;
-    border-radius: $seven_border-radious;
+    background-color: #3282b8;
+    // height: $seven_height;
+    // width: $seven_width;
+    // border-radius: $seven_border-radious;
     justify-content: space-evenly;
-    padding: 10px;
-    margin-left: 2vw;
+    align-self: center;
+    border-radius: 12px;
+    overflow: hidden;
+    overflow-x: auto;
 }
 
 .day {
-    flex: 1;
-    flex-direction: row;
     flex-wrap: nowrap;
     height: 43vh;
-    width: 11vw;
-    background-color: blue;
-    border-radius: 26px;
-    margin-top: 2vh;
-    margin-left: 1.8vw;
+    width: 12vw;
+    background-color: #bbe1fa;
+    margin: .5vw;
+    padding: .5vw;
+    margin-left: 1.1vw;
+    border-radius: 12px;
 }
 
 .scrollcontent {
-    overflow-y: scroll;
-    max-height: 31.9vh;
+    overflow-y: auto;
+    max-height: 85%;
     list-style: none;
-    border-bottom-left-radius: 26px;
-    border-bottom-right-radius: 26px;
+    border-bottom-left-radius: 12px;
+    flex-direction: column;
+    border-bottom-right-radius: 12px;
     padding-left: .5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scrollcontent::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
 }
 
 .gap {
-    width: 10.1vw;
-    height: .2vh;
-    border-radius: 12;
-    margin-left: .6vw;
-    margin-top: .5vh;
+    align-self: center;
+    width: 85%;
+    height: .5vh;
+    border-radius: 12px;
     background-color: white;
+    margin: 2%;
+    margin-left: 8%;
 }
 
 .titleofdaybac {
@@ -52,10 +62,10 @@
 
 .classesbackground {
     height: 4vh;
-    margin-top: 2vh;
-    padding-left: 20;
+    margin-top: 1vh;
+    width: 10vw;
     text-size-adjust: 100px;
-    background-color: white;
+    background-color: rgb(244, 245, 248);
     border-radius: 12px;
 }
 
@@ -66,10 +76,8 @@
 }
 
 .flex-container {
-    width: $flexcont-width;
-    height: $flexcont-height;
-    display: $flexcont-display;
-    flex-direction: $flexcont-direction;
+    display: flex;
+    flex-direction: row;
 }
 
 .scrollbar {

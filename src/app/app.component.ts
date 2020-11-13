@@ -6,6 +6,7 @@ import { Classes } from './classes'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  title = 'Calendar'
   days: Classes[] = [
     {
       weekday: 'Monday',

@@ -1,10 +1,11 @@
 @import './../variables.scss';
-.dayComp {
-    display: inline-block;
-    width: 46vw;
-    height: 40vh;
-    background-color: blue;
-    margin-top: 20px;
-    margin-left: 5%;
-    border-radius: 26px;
+.DayComp {
+    background-color: $ComponentBackgrounds;
+    height: 100%;
+    width: 100%;
+    flex-grow: 1;
 }
+
+// .NameOfDay {}
+// 
+// .Day {}

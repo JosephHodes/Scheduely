@@ -12,7 +12,7 @@ export class DayCalendarComponent implements OnInit {
   ngOnInit(): void {
     setInterval(() => {
       let day = new Date()
-      this.todaysday = day.getDay();
+      this.todaysday = day.getDay() - 1;
 
     }, 0.1)
 
