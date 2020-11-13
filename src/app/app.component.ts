@@ -37,5 +37,7 @@ export class AppComponent {
       classes: []
     },
   ]
-
+  DaySelected(data) {
+    console.log(data);
+  }
 }

@@ -22,6 +22,10 @@
     border-radius: 12px;
 }
 
+.day::hover {
+    box-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+}
+
 .scrollcontent {
     overflow-y: auto;
     max-height: 85%;

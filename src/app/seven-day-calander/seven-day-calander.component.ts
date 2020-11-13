@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Classes, test } from './../classes'
 
 @Component({
@@ -39,6 +39,7 @@ export class SevenDayCalanderComponent implements OnInit {
   //   }
   // ]
   @Input('days') days: Classes[];
+  @Output('DaySelected') DaySelected = new EventEmitter<Classes>();
   convert12to24(time: string,) {
     let splitTime = time.split(' ');
 
@@ -68,6 +69,9 @@ export class SevenDayCalanderComponent implements OnInit {
     // console.log(x);
   }
   sorted: test[]
+  GetClass(classic: Classes) {
+    this.DaySelected.emit(classic);
+  }
   sortdayfunc(weekday: number) {
     const array = [];
 

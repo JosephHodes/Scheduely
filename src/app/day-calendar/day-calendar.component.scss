@@ -2,10 +2,39 @@
 .DayComp {
     background-color: $ComponentBackgrounds;
     height: 100%;
-    width: 100%;
+    width: 99%;
     flex-grow: 1;
+    border-radius: 12px;
+    padding: 2%;
+    overflow-y: auto;
+    max-height: max-content;
 }
 
-// .NameOfDay {}
-// 
-// .Day {}
+.NameOfDay {
+    align-content: center;
+    width: auto;
+    height: auto;
+    padding: 1%;
+    margin-right: 70%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.Day {
+    align-self: auto;
+    font-size: 2.5vw;
+}
+
+.TodaysAssignment {
+    margin-top: 1%;
+    background-color: white;
+    width: auto;
+    height: 10vh;
+    border-radius: 12px;
+    padding: 1%;
+}
+
+.Classes {
+    font-size: 1.5vw;
+    margin-top: 2.5%;
+}

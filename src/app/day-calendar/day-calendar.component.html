@@ -1,14 +1,14 @@
 <div class="DayComp">
     <div class="NameOfDay">
         <h1 class="Day">
-            {{days[todaysday].weekday}}
+            {{days[0].weekday}}
         </h1>
     </div>
     <div class="Gap"></div>
     <div class="flex-container">
-        <li *ngFor="let classes of days[todaysday].classes; index as x" style="list-style: none;">
+        <li *ngFor="let classes of days[0].classes; index as x" style="list-style: none;">
             <div class="TodaysAssignment">
-                {{days[todaysday].classes[x]}}
+                <h1 class="Classes">{{days[0].classes[x]}}</h1>
             </div>
         </li>
     </div>

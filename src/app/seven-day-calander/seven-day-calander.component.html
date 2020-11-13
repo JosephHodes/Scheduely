@@ -13,7 +13,7 @@
                     <div class="scrollbar">
                         <li *ngFor="let man of days[m].classes; let x =index" class="list">
                             <div class="classesbackground">
-                                <h3 class='classes'>
+                                <h3 class='classes' (click)="GetClass(days[m].classes[x])">
 
                                     {{days[m].classes[x]}}</h3>
                             </div>
