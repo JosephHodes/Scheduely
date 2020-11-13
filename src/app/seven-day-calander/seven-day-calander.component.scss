@@ -6,21 +6,25 @@
     // border-radius: $seven_border-radious;
     justify-content: space-evenly;
     align-self: center;
+    border-radius: 12px;
+    overflow: hidden;
+    overflow-x: auto;
 }
 
 .day {
     flex-wrap: nowrap;
     height: 43vh;
-    width: auto;
+    width: 12vw;
     background-color: #bbe1fa;
-    border-radius: 12px;
     margin: .5vw;
     padding: .5vw;
+    margin-left: 1.1vw;
+    border-radius: 12px;
 }
 
 .scrollcontent {
     overflow-y: auto;
-    max-height: 17.2vw;
+    max-height: 85%;
     list-style: none;
     border-bottom-left-radius: 12px;
     flex-direction: column;
@@ -33,13 +37,17 @@
 
 .scrollcontent::-webkit-scrollbar {
     width: 10px;
+    height: 10px;
 }
 
 .gap {
-    width: 8vw;
     align-self: center;
-    border-radius: 12;
+    width: 85%;
+    height: .5vh;
+    border-radius: 12px;
     background-color: white;
+    margin: 2%;
+    margin-left: 8%;
 }
 
 .titleofdaybac {
@@ -54,9 +62,10 @@
 
 .classesbackground {
     height: 4vh;
-    margin-top: 2vh;
+    margin-top: 1vh;
+    width: 10vw;
     text-size-adjust: 100px;
-    background-color: white;
+    background-color: rgb(244, 245, 248);
     border-radius: 12px;
 }
 

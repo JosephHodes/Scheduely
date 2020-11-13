@@ -1,10 +1,11 @@
 <main>
-    <div class="mainPage">
-
+    <div class="mainPage" style="border-radius: 12px; ">
         <div class="top">
             <app-day-calendar [days]="days" class="tl"></app-day-calendar>
             <app-next-view class="tr"></app-next-view>
         </div>
-        <app-seven-day-calendar [days]="days" class="b"></app-seven-day-calendar>
+        <div class="sevdaybac">
+            <app-seven-day-calendar [days]="days" class="b"></app-seven-day-calendar>
+        </div>
     </div>
 </main>
