@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Clases, test } from './../classes'
+import { Classes, test } from './../classes'
 
 @Component({
   selector: 'app-seven-day-calendar',
@@ -8,7 +8,7 @@ import { Clases, test } from './../classes'
 })
 export class SevenDayCalanderComponent implements OnInit {
 
-  // days: Clases[] = [
+  // days: Classes[] = [
   //   {
   //     weekday: 'Monday',
   //     classes: ['Math 12:00 am', 'English 2:00 pm', 'Physics 1:00 am']
@@ -38,7 +38,7 @@ export class SevenDayCalanderComponent implements OnInit {
   //     classes: ['']
   //   }
   // ]
-  @Input('days') days: Clases[];
+  @Input('days') days: Classes[];
   convert12to24(time: string,) {
     let splitTime = time.split(' ');
 
