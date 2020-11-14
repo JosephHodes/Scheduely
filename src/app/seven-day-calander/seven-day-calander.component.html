@@ -1,27 +1,29 @@
 <div class="Component">
     <div class="flex-container">
-        <li *ngFor="let i of days;let m = index;" style="list-style: none;">
+        <li *ngFor="let i of days;let m = index;" style="list-style: none;" tabindex="-1">
+            <div (click)="selectChangeHandler()" (click)="GetClass(days[m])">
+                <div class="day">
+                    <div class="titleofday">
+                        <h1 class="titleofday">{{days[m].weekday}}</h1>
+                    </div>
 
-            <div class="day">
-                <div class="titleofday">
-                    <h1 class="titleofday">{{days[m].weekday}}</h1>
-                </div>
+                    <div class="gap"></div>
+                    <div class="scrollcontent">
 
-                <div class="gap"></div>
-                <div class="scrollcontent">
+                        <div class="scrollbar">
+                            <li *ngFor="let man of days[m].classes; let x =index" class="list">
+                                <div class="classesbackground">
+                                    <h3 class='classes'>
 
-                    <div class="scrollbar">
-                        <li *ngFor="let man of days[m].classes; let x =index" class="list">
-                            <div class="classesbackground">
-                                <h3 class='classes' (click)="GetClass(days[m].classes[x])">
-
-                                    {{days[m].classes[x]}}</h3>
-                            </div>
-                        </li>
+                                        {{days[m].classes[x]}}</h3>
+                                </div>
+                            </li>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </li>
+
     </div>
+
 </div>

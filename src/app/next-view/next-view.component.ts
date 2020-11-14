@@ -1,3 +1,5 @@
+import { EventEmitter } from '@angular/core';
+import { Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./next-view.component.scss']
 })
 export class NextViewComponent implements OnInit {
-
+  @Output('Unselectnext') UnSelectNext = new EventEmitter<boolean>();
   constructor() { }
 
+  selectChangeHandler() {
+    let x = true;
+    this.UnSelectNext.emit(x)
+  }
   ngOnInit(): void {
   }
 

@@ -19,7 +19,8 @@ main {
     flex-direction: column;
     align-content: center;
     justify-content: center;
-    padding: 50px;
+    padding: 40px;
+    overflow: hidden;
 }
 
 .mainPage {
@@ -29,7 +30,7 @@ main {
 }
 
 .sevdaybac {
-    margin-top: 12px;
+    margin-top: 1%;
 }
 
 main * {

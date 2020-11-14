@@ -1,15 +1,38 @@
 <div class="DayComp">
-    <div class="NameOfDay">
-        <h1 class="Day">
-            {{days[0].weekday}}
-        </h1>
-    </div>
-    <div class="Gap"></div>
-    <div class="flex-container">
-        <li *ngFor="let classes of days[0].classes; index as x" style="list-style: none;">
-            <div class="TodaysAssignment">
-                <h1 class="Classes">{{days[0].classes[x]}}</h1>
+    <div *ngIf="deselected; else dayselected">
+        <div class="NameOfDay">
+            <h1 class="Day">
+                {{days[todaysday].weekday}}
+            </h1>
+        </div>
+        <div class="Gap"></div>
+        <ng-scrollbar>
+            <div class="flex-container">
+                <li *ngFor="let classes of days[todaysday].classes; index as x" style="list-style: none;">
+                    <div class="TodaysAssignment">
+                        <h1 class="Classes">{{days[todaysday].classes[x]}}</h1>
+                    </div>
+                </li>
             </div>
-        </li>
+        </ng-scrollbar>
     </div>
+
+
+    <ng-template #dayselected>
+        <div class="NameOfDay">
+            <h1 class="Day">
+                {{SelectedDay.weekday}}
+            </h1>
+        </div>
+        <div class="Gap"></div>
+        <ng-scrollbar>
+            <div class="flex-container">
+                <li *ngFor="let classes of SelectedDay.classes; index as x" style="list-style: none;">
+                    <div class="TodaysAssignment">
+                        <h1 class="Classes">{{SelectedDay.classes[x]}}</h1>
+                    </div>
+                </li>
+            </div>
+        </ng-scrollbar>
+    </ng-template>
 </div>

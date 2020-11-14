@@ -2,12 +2,16 @@
 .DayComp {
     background-color: $ComponentBackgrounds;
     height: 100%;
-    width: 99%;
+    width: 98%;
     flex-grow: 1;
     border-radius: 12px;
-    padding: 2%;
-    overflow-y: auto;
     max-height: max-content;
+}
+
+.flex-container {
+    padding: 2%;
+    width: 100%;
+    height: 36.4vh;
 }
 
 .NameOfDay {
@@ -15,7 +19,6 @@
     width: auto;
     height: auto;
     padding: 1%;
-    margin-right: 70%;
     background-color: white;
     border-radius: 10px;
 }
@@ -26,7 +29,7 @@
 }
 
 .TodaysAssignment {
-    margin-top: 1%;
+    margin-top: 3%;
     background-color: white;
     width: auto;
     height: 10vh;
