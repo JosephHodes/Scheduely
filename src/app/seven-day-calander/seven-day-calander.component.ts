@@ -40,6 +40,7 @@ export class SevenDayCalanderComponent implements OnInit {
   // ]
   @Input('days') days: Classes[];
   @Output('DaySelected') DaySelected = new EventEmitter<Classes>();
+  @Output('DeSelected') DeSelected = new EventEmitter<boolean>();
   convert12to24(time: string,) {
     let splitTime = time.split(' ');
 
@@ -71,6 +72,10 @@ export class SevenDayCalanderComponent implements OnInit {
   sorted: test[]
   GetClass(classic: Classes) {
     this.DaySelected.emit(classic);
+  }
+  selectChangeHandler() {
+    let x = false
+    this.DeSelected.emit(x)
   }
   sortdayfunc(weekday: number) {
     const array = [];
