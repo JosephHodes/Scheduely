@@ -7,7 +7,9 @@ import { Classes } from './classes'
 })
 export class AppComponent {
   title = 'Calendar'
+  deselected: boolean = true;
   days: Classes[] = [
+
     {
       weekday: 'Monday',
       classes: ['Math', 'English', 'Physics', 'English', 'Physics', 'English', 'Physics', 'English', 'Physics']
@@ -37,5 +39,11 @@ export class AppComponent {
       classes: []
     },
   ]
-
+  SelectedDayClass: Classes;
+  DaySelected(data: Classes) {
+    this.SelectedDayClass = data;
+  }
+  checkifdeslected(data: boolean) {
+    this.deselected = data;
+  }
 }

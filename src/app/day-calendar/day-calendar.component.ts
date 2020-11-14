@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+
 import { Classes } from './../classes'
 @Component({
   selector: 'app-day-calendar',
@@ -7,7 +8,10 @@ import { Classes } from './../classes'
 })
 export class DayCalendarComponent implements OnInit {
   @Input() days: Classes[];
+  @Input('SelectedDay') SelectedDay: Classes;
+  @Input('deslected') deselected: boolean;
   constructor() { }
+
   todaysday: number;
   ngOnInit(): void {
     setInterval(() => {
@@ -15,7 +19,5 @@ export class DayCalendarComponent implements OnInit {
       this.todaysday = day.getDay() - 1;
 
     }, 0.1)
-
   }
-
 }
