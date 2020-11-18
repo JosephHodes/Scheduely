@@ -14,7 +14,7 @@ import { NgScrollbarModule } from 'ngx-scrollbar';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire';
-import { environment } from './../environments/environment'
+import { firebasestuff } from './../apikey/apikey'
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ import { environment } from './../environments/environment'
     BrowserAnimationsModule,
     MatGridListModule,
     CommonModule, NgScrollbarModule, NgbModule, HttpClientModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireModule.initializeApp(firebasestuff),
     AngularFireModule
   ],
   providers: [],
