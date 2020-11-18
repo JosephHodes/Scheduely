@@ -13,6 +13,8 @@ import { SevenDayCalanderComponent } from './seven-day-calander/seven-day-caland
 import { NgScrollbarModule } from 'ngx-scrollbar';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from './../environments/environment'
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     BrowserAnimationsModule,
     MatGridListModule,
-    CommonModule, NgScrollbarModule, NgbModule, HttpClientModule
+    CommonModule, NgScrollbarModule, NgbModule, HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireModule
   ],
   providers: [],
   bootstrap: [AppComponent]

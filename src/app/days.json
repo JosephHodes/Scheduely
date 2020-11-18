@@ -1,0 +1,184 @@
+{
+  "days": [
+    {
+      "weekday": "Monday",
+      "classes": [
+        {
+          "name": "Math",
+          "teacher": "Mrs. Turing",
+          "start-time": "09:00:00 GMT-0800",
+          "duration": 120,
+          "assignments": [
+            {
+              "name": "study for test",
+              "type": "study"
+            }
+          ]
+        },
+        {
+          "name": "English",
+          "teacher": "Mr. Poe",
+          "start-time": "11:00:00 GMT-0800",
+          "duration": 120,
+          "assignments": [
+            {
+              "name": "read chapter 1",
+              "type": "read"
+            }
+          ]
+        },
+        {
+          "name": "Physics",
+          "teacher": "Mrs. Higgs",
+          "start-time": "13:00:00 GMT-0800",
+          "duration": 120,
+          "assignments": [
+            {
+              "name": "read chapter 11",
+              "type": "read"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "weekday": "Tuesday",
+      "classes": [
+        {
+          "name": "Music",
+          "teacher": "Mrs. Germanotta",
+          "start-time": "09:00:00 GMT-0800",
+          "duration": 120,
+          "assignments": [
+            {
+              "name": "practice",
+              "type": "practice"
+            }
+          ]
+        },
+        {
+          "name": "Art",
+          "teacher": "Mr. Gogh",
+          "start-time": "11:00:00 GMT-0800",
+          "duration": 120,
+          "assignments": [
+            {
+              "name": "self-portrait",
+              "type": "homework"
+            }
+          ]
+        },
+        {
+          "name": "Gym",
+          "teacher": "Mrs. ",
+          "start-time": "13:00:00 GMT-0800",
+          "duration": 120,
+          "assignments": []
+        }
+      ]
+    },
+    {
+      "weekday": "Wednesday",
+      "classes": [
+        {
+          "name": "Math",
+          "teacher": "Mrs. Turing",
+          "start-time": "09:00:00 GMT-0800",
+          "duration": 120,
+          "assignments": [
+            {
+              "name": "study for test",
+              "type": "study"
+            }
+          ]
+        },
+        {
+          "name": "English",
+          "teacher": "Mr. Poe",
+          "start-time": "11:00:00 GMT-0800",
+          "duration": 120,
+          "assignments": [
+            {
+              "name": "read chapters 2-4",
+              "type": "read"
+            }
+          ]
+        },
+        {
+          "name": "Physics",
+          "teacher": "Mrs. Higgs",
+          "start-time": "13:00:00 GMT-0800",
+          "duration": 120,
+          "assignments": [
+            {
+              "name": "read chapter 12",
+              "type": "read"
+            },
+            {
+              "name": "complete worksheet 14",
+              "type": "worksheet"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "weekday": "Thursday",
+      "classes": [
+        {
+          "name": "Music",
+          "teacher": "Mrs. Germanotta",
+          "start-time": "09:00:00 GMT-0800",
+          "duration": 120,
+          "assignments": [
+            {
+              "name": "practice",
+              "type": "practice"
+            }
+          ]
+        },
+        {
+          "name": "Art",
+          "teacher": "Mr. Gogh",
+          "start-time": "11:00:00 GMT-0800",
+          "duration": 120,
+          "assignments": []
+        },
+        {
+          "name": "Gym",
+          "teacher": "Mrs. ",
+          "start-time": "13:00:00 GMT-0800",
+          "duration": 120,
+          "assignments": []
+        }
+      ]
+    },
+    {
+      "weekday": "Friday",
+      "classes": [
+        {
+          "name": "Math",
+          "teacher": "Mrs. Turing",
+          "start-time": "09:00:00 GMT-0800",
+          "duration": 120,
+          "assignments": []
+        },
+        {
+          "name": "English",
+          "teacher": "Mr. Poe",
+          "start-time": "11:00:00 GMT-0800",
+          "duration": 120,
+          "assignments": []
+        }
+      ]
+    },
+    {
+      "weekday": "Saturday",
+      "classes": []
+    },
+    {
+      "weekday": "Sunday",
+      "classes": []
+    }
+  ]
+}

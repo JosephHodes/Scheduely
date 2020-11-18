@@ -9,16 +9,18 @@
 
                     <div class="gap"></div>
                     <div class="scrollcontent">
+                        <ng-scrollbar>
+                            <div class="scrollbar">
+                                <li *ngFor="let man of days[m].classes; let x =index" class="list">
+                                    <div class="classesbackground">
+                                        <h3 class='classes'>
 
-                        <div class="scrollbar">
-                            <li *ngFor="let man of days[m].classes; let x =index" class="list">
-                                <div class="classesbackground">
-                                    <h3 class='classes'>
+                                            {{days[m].classes[x]}}</h3>
+                                    </div>
+                                </li>
 
-                                        {{days[m].classes[x]}}</h3>
-                                </div>
-                            </li>
-                        </div>
+                            </div>
+                        </ng-scrollbar>
                     </div>
                 </div>
             </div>

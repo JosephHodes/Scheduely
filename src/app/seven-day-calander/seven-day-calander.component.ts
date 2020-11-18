@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Classes, test } from './../classes'
+import { Classes, Test } from './../classes'
 
 @Component({
   selector: 'app-seven-day-calendar',
@@ -8,36 +8,6 @@ import { Classes, test } from './../classes'
 })
 export class SevenDayCalanderComponent implements OnInit {
 
-  // days: Classes[] = [
-  //   {
-  //     weekday: 'Monday',
-  //     classes: ['Math 12:00 am', 'English 2:00 pm', 'Physics 1:00 am']
-  //   },
-  //   {
-  //     weekday: 'Tuesday',
-  //     classes: ['Music 11:00 pm', 'Art 1:00 pm', 'Gym 3:00 pm']
-  //   },
-  //   {
-  //     weekday: 'Wednesday',
-  //     classes: ['Math 1:00 pm', 'English 2:00 am', 'Physics 4:00 pm']
-  //   },
-  //   {
-  //     weekday: 'Thursday',
-  //     classes: ['Music 4:00 am', 'Art 5:00 pm', 'Gym 3:00 am']
-  //   },
-  //   {
-  //     weekday: 'Friday',
-  //     classes: ['Math 3:00 pm', 'English 2:00 am']
-  //   },
-  //   {
-  //     weekday: 'Saturday',
-  //     classes: ['']
-  //   },
-  //   {
-  //     weekday: 'Sunday',
-  //     classes: ['']
-  //   }
-  // ]
   @Input('days') days: Classes[];
   @Output('DaySelected') DaySelected = new EventEmitter<Classes>();
   @Output('DeSelected') DeSelected = new EventEmitter<boolean>();
@@ -69,7 +39,7 @@ export class SevenDayCalanderComponent implements OnInit {
     // this.convert24tomins(this.convert12to24(x[1] + " " + x[2]));
     // console.log(x);
   }
-  sorted: test[]
+  sorted: Test[]
   GetClass(classic: Classes) {
     this.DaySelected.emit(classic);
   }

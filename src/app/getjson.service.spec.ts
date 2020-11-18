@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { GetJsonService } from './get-json.service';
+import { GetjsonService } from './getjson.service';
 
-describe('GetJsonService', () => {
-  let service: GetJsonService;
+describe('GetjsonService', () => {
+  let service: GetjsonService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(GetJsonService);
+    service = TestBed.inject(GetjsonService);
   });
 
   it('should be created', () => {

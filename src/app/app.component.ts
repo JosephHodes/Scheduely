@@ -1,12 +1,16 @@
-import { Component } from '@angular/core';
-import { Classes } from './classes'
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Classes, Day } from './classes'
+import { GetjsonService } from './getjson.service'
+import { Subscription } from 'rxjs'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'Calendar'
+export class AppComponent implements OnInit, OnDestroy {
+  JsonSub: Subscription;
+  FixedDays: Day[];
+  Title = 'Calendar'
   deselected: boolean = true;
   days: Classes[] = [
 
@@ -45,5 +49,26 @@ export class AppComponent {
   }
   checkifdeslected(data: boolean) {
     this.deselected = data;
+  }
+  constructor(private getserv: GetjsonService) {
+
+  }
+
+
+  ngOnInit() {
+    this.finaleJson();
+  }
+  ngOnDestroy() {
+    if (this.JsonSub) {
+      this.JsonSub.unsubscribe();
+    }
+  }
+  finaleJson() {
+    this.JsonSub = this.getserv.getJSON().subscribe(res => {
+      this.FixedDays = res;
+
+    },
+      err => console.log(err)
+    )
   }
 }
