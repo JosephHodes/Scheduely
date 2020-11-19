@@ -25,6 +25,18 @@
     box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.75);
 }
 
+.day:active {
+    -webkit-box-shadow: 0px 0px 12px 6px $ShadowColors;
+    -moz-box-shadow: 0px 0px 12px 6px $ShadowColors;
+    box-shadow: 0px 0px 12px 6px $ShadowColors;
+}
+
+.day:focus {
+    -webkit-box-shadow: 0px 0px 12px 6px $ShadowColors;
+    -moz-box-shadow: 0px 0px 12px 6px $ShadowColors;
+    box-shadow: 0px 0px 12px 6px $ShadowColors;
+}
+
 .day:hover {
     -webkit-box-shadow: 0px 0px 12px 6px $ShadowColors;
     -moz-box-shadow: 0px 0px 12px 6px $ShadowColors;

@@ -15,7 +15,7 @@ export interface classes {
     teacher: string;
     start_time: string;
     duration: number;
-    assignments: Assignments
+    assignments: Assignments;
 }
 export interface Assignments {
     name: string;

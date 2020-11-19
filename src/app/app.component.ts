@@ -1,49 +1,21 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Classes, Day } from './classes'
 import { GetjsonService } from './getjson.service'
-import { Subscription } from 'rxjs'
+import { pipe, Subscription } from 'rxjs'
+import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent implements OnInit {
   JsonSub: Subscription;
   FixedDays: Day[];
   Title = 'Calendar'
   deselected: boolean = true;
-  days: Classes[] = [
-
-    {
-      weekday: 'Monday',
-      classes: ['Math', 'English', 'Physics', 'English', 'Physics', 'English', 'Physics', 'English', 'Physics']
-    },
-    {
-      weekday: 'Tuesday',
-      classes: ['Music', 'Art', 'Gym']
-    },
-    {
-      weekday: 'Wednesday',
-      classes: ['Math', 'English', 'Physics']
-    },
-    {
-      weekday: 'Thursday',
-      classes: ['Music', 'Art', 'Gym']
-    },
-    {
-      weekday: 'Friday',
-      classes: ['Math', 'English']
-    },
-    {
-      weekday: 'Saturday',
-      classes: []
-    },
-    {
-      weekday: 'Sunday',
-      classes: []
-    },
-  ]
   SelectedDayClass: Classes;
+
+
   DaySelected(data: Classes) {
     this.SelectedDayClass = data;
   }
@@ -53,22 +25,19 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(private getserv: GetjsonService) {
 
   }
-
+  man: any[];
 
   ngOnInit() {
-    this.finaleJson();
+    this.finaleJson()
   }
   ngOnDestroy() {
     if (this.JsonSub) {
       this.JsonSub.unsubscribe();
+      console.log(this.FixedDays);
     }
   }
   finaleJson() {
-    this.JsonSub = this.getserv.getJSON().subscribe(res => {
-      this.FixedDays = res;
-
-    },
-      err => console.log(err)
-    )
+    this.JsonSub = this.getserv.getDays().subscribe(res =>
+      this.FixedDays = (res.payload.data() as Day[]))
   }
 }

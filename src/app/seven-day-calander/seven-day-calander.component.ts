@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Classes, Test } from './../classes'
+import { Classes, Day, Test } from './../classes'
 
 @Component({
   selector: 'app-seven-day-calendar',
@@ -8,7 +8,7 @@ import { Classes, Test } from './../classes'
 })
 export class SevenDayCalanderComponent implements OnInit {
 
-  @Input('days') days: Classes[];
+  @Input('days') days: Day[];
   @Output('DaySelected') DaySelected = new EventEmitter<Classes>();
   @Output('DeSelected') DeSelected = new EventEmitter<boolean>();
   convert12to24(time: string,) {
@@ -47,38 +47,37 @@ export class SevenDayCalanderComponent implements OnInit {
     let x = false
     this.DeSelected.emit(x)
   }
-  sortdayfunc(weekday: number) {
-    const array = [];
 
-    for (let currentclass = 0; this.days[currentclass].classes.length > currentclass; currentclass++) {
-      let splitValues = this.days[weekday].classes[currentclass].split(' ');
-      let finalevalue = parseInt(this.convert24tomins(this.convert12to24(splitValues[1] + " " + splitValues[2])));
-      array.push({
-        name: splitValues[0],
-        value: finalevalue
-      });
-    }
-
-    let x = array.sort((a, b) => { return a.value - b.value });
-    for (let o = 0; x.length > o; o++) {
-
-      x.splice(o);
-      o++;
-    }
-    return x;
-  }
   ngOnInit(): void {
     console.log(this.days)
-    // this.days[0].classes = this.sortdayfunc(0);
-    // this.days[1].classes = this.sortdayfunc(1);
-    // this.days[2].classes = this.sortdayfunc(2);
-    // this.days[3].classes = this.sortdayfunc(3);
-    // this.days[4].classes = this.sortdayfunc(4);
-    // this.days[5].classes = this.sortdayfunc(5);
-    // this.days[6].classes = this.sortdayfunc(6);
-    console.log(this.days)
   }
 
+  // sortdayfunc(weekday: number) {
+  //   const array = [];
+  // this.days[0].classes = this.sortdayfunc(0);
+  // this.days[1].classes = this.sortdayfunc(1);
+  // this.days[2].classes = this.sortdayfunc(2);
+  // this.days[3].classes = this.sortdayfunc(3);
+  // this.days[4].classes = this.sortdayfunc(4);
+  // this.days[5].classes = this.sortdayfunc(5);
+  // this.days[6].classes = this.sortdayfunc(6);
+  //   for (let currentclass = 0; this.days[currentclass].classes.length > currentclass; currentclass++) {
+  //     // let splitValues = this.days[weekday].classes[currentclass].split(' ');
+  //     let finalevalue = parseInt(this.convert24tomins(this.convert12to24(splitValues[1] + " " + splitValues[2])));
+  //     array.push({
+  //       name: splitValues[0],
+  //       value: finalevalue
+  //     });
+  // //   }
+
+  //   //   let x = array.sort((a, b) => { return a.value - b.value });
+  // for (let o = 0; x.length > o; o++) {
+
+  //   x.splice(o);
+  //   o++;
+  // }
+  // return x;
+  //   }
 }
 
 
