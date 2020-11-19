@@ -39,7 +39,7 @@ export class GetjsonService {
 
   async pushdata(data: Day[]): Promise<void> {
     try {
-      this.d.add(data)
+      this.d.update({ data })
     } catch { err => console.log(err) }
   }
 

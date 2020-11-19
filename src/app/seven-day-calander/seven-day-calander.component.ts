@@ -8,7 +8,7 @@ import { Classes, Day, Test } from './../classes'
 })
 export class SevenDayCalanderComponent implements OnInit {
 
-  @Input('days') days: Day[];
+  @Input('days') fixedDays: Day[];
   @Output('DaySelected') DaySelected = new EventEmitter<Classes>();
   @Output('DeSelected') DeSelected = new EventEmitter<boolean>();
   convert12to24(time: string,) {
@@ -36,8 +36,7 @@ export class SevenDayCalanderComponent implements OnInit {
   x = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
   constructor() {
 
-    // this.convert24tomins(this.convert12to24(x[1] + " " + x[2]));
-    // console.log(x);
+    console.log(this.fixedDays);
   }
   sorted: Test[]
   GetClass(classic: Classes) {
@@ -49,7 +48,7 @@ export class SevenDayCalanderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.days)
+    console.log(this.fixedDays)
   }
 
   // sortdayfunc(weekday: number) {

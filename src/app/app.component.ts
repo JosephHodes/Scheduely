@@ -25,10 +25,13 @@ export class AppComponent implements OnInit {
   constructor(private getserv: GetjsonService) {
 
   }
-  man: any[];
+  dayArray: Day[];
 
   ngOnInit() {
     this.finaleJson()
+    setInterval(() => {
+      this.dayArray = this.FixedDays
+    }, 1000)
   }
   ngOnDestroy() {
     if (this.JsonSub) {
