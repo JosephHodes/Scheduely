@@ -110,3 +110,20 @@
     --scroll-view-color: transparent;
     --scroll-view-height: 10px;
 }
+
+.add {
+    height: 4vh;
+    margin-top: 1vh;
+    width: 10vw;
+    text-size-adjust: 100px;
+    background-color: rgb(244, 245, 248);
+    border-radius: 12px;
+    -webkit-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.418);
+    -moz-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.418);
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.418);
+}
+
+.AddButton {
+    height: 2vw;
+    width: 2vw;
+}

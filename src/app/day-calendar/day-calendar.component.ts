@@ -14,10 +14,15 @@ export class DayCalendarComponent implements OnInit {
 
   todaysday: number;
   ngOnInit(): void {
-    setInterval(() => {
-      let day = new Date()
-      this.todaysday = day.getDay() - 1;
 
-    }, 0.1)
+    let day = new Date()
+    this.todaysday = day.getDay()
+    if (this.todaysday === 0) {
+      this.todaysday = + 6;
+    } else {
+      this.todaysday--;
+    }
+    console.log(this.todaysday)
+
   }
 }
