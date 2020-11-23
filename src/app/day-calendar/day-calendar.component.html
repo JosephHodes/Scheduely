@@ -1,5 +1,5 @@
 <div class="DayComp">
-    <div *ngIf="deselected; else dayselected">
+    <div *ngIf="deselected;else dayselected">
         <div class="NameOfDay">
             <h1 class="Day">
                 {{days[todaysday].weekday}}
@@ -7,16 +7,22 @@
         </div>
         <div class="Gap"></div>
         <ng-scrollbar>
-            <div class="flex-container">
+            <div class="day-container">
                 <li *ngFor="let classes of days[todaysday].classes; index as x" style="list-style: none;">
+
                     <div class="TodaysAssignment">
-                        <h1 class="Classes">{{classes.name}}</h1>
+                        <div class="flex-container">
+                            <h1 class="Classes">{{classes.name}}</h1>
+                            <div class="classGap"></div>
+                        </div>
                     </div>
                 </li>
-                <div></div>
+                <div class="columnGap"></div>
             </div>
         </ng-scrollbar>
     </div>
+
+
 
 
     <ng-template #dayselected>
@@ -27,15 +33,15 @@
         </div>
         <div class="Gap"></div>
         <ng-scrollbar>
-            <div class="flex-container">
+            <div class="day-container">
                 <li *ngFor="let classes of SelectedDay.classes; index as x" style="list-style: none;">
                     <div class="TodaysAssignment">
                         <h1 class="Classes">{{classes.name}}</h1>
                     </div>
-                    <div></div>
-
                 </li>
             </div>
+
         </ng-scrollbar>
+
     </ng-template>
 </div>

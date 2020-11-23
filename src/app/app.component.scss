@@ -19,14 +19,18 @@ main {
     flex-direction: column;
     align-content: center;
     justify-content: center;
-    padding: 40px;
-    overflow: hidden;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 4vh;
 }
 
 .mainPage {
     max-width: 100%;
     height: 100%;
     border-radius: 12px;
+    padding: 20px;
+    background-color: $secondarybackground;
 }
 
 .sevdaybac {
@@ -39,7 +43,7 @@ main * {
 
 .top {
     display: flex;
-    background-color: #3282b8;
+    background-color: $secondarybackground;
     height: 45vh;
 }
 
@@ -48,13 +52,15 @@ main * {
 }
 
 .top .tl {
-    background-color: #222;
+    background-color: $secondarybackground;
+    width: 10%;
 }
 
 .top .tr {
-    background-color: #333;
+    background-color: $secondarybackground;
+    width: 10%;
 }
 
 .b {
-    background-color: #444;
+    background-color: $secondarybackground;
 }

@@ -1,6 +1,6 @@
 @import './../variables.scss';
 .Component {
-    background-color: #3282b8;
+    background-color: $ComponentBackgrounds;
     // height: $seven_height;                                                                                                                           
     // width: $seven_width;                                                                                                                             
     // border-radius: $seven_border-radious;                                                                                                                            
@@ -9,13 +9,14 @@
     border-radius: 12px;
     overflow: hidden;
     overflow-x: auto;
+    height: 45vh;
 }
 
 .day {
     flex-wrap: nowrap;
     height: 43vh;
     width: 12vw;
-    background-color: #bbe1fa;
+    background-color: $eachbackgroundcolor;
     margin: .5vw;
     padding: .5vw;
     margin-left: 1.1vw;
@@ -80,7 +81,7 @@
     margin-top: 1vh;
     width: 10vw;
     text-size-adjust: 100px;
-    background-color: rgb(244, 245, 248);
+    background-color: $PostBackgrounds;
     border-radius: 12px;
     -webkit-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.418);
     -moz-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.418);

@@ -8,33 +8,45 @@
     -webkit-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.75);
+    padding: 1%;
 }
 
 .flex-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.classGap {
+    height: 8.5vh;
+    width: .5vw;
+    background-color: black;
+    margin-left: 1vw;
+}
+
+.day-container {
     padding: 2%;
     width: 100%;
-    height: 36.32vh;
+    height: 35.9vh;
 }
 
 .NameOfDay {
-    width: auto;
-    max-width: 100%;
+    width: 100%;
     height: auto;
     padding: 10px;
-    background-color: white;
+    background-color: $PostBackgrounds;
     border-radius: 10px;
     padding-left: 40%;
 }
 
 .Day {
-    align-self: auto;
+    align-self: center;
     font-size: 2.5vw;
 }
 
 .TodaysAssignment {
     margin-top: 1.5vh;
     max-width: 100%;
-    background-color: white;
+    background-color: $PostBackgrounds;
     width: auto;
     height: 10vh;
     border-radius: 12px;
@@ -45,6 +57,8 @@
 }
 
 .Classes {
+    width: 6vw;
+    height: 100%;
     font-size: 1.5vw;
     margin-top: 2.5%;
 }
