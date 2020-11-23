@@ -1,28 +1,39 @@
 <div class="Component">
     <div class="flex-container">
-        <li *ngFor="let i of fixedDays;let m = index;" style="list-style: none;" tabindex="-1">
+        <li *ngFor="let days of fixedDays;let m = index;" style="list-style: none;">
             <div (click)="selectChangeHandler()" (click)="GetClass(fixedDays[m])">
                 <div class="day">
                     <div class="titleofday">
-                        <h1 class="titleofday">{{fixedDays[i].classes}}</h1>
+                        <h1 class="titleofday">{{days.weekday}}</h1>
                     </div>
 
                     <div class="gap"></div>
                     <div class="scrollcontent">
                         <ng-scrollbar>
                             <div class="scrollbar">
-                                <li *ngFor="let man of fixedDays[m].classes; let x =index" class="list">
+                                <li *ngFor="let class of days.classes; let x =index" class="list">
                                     <div class="classesbackground">
                                         <h3 class='classes'>
 
-                                            {{days[m].classes[x]} }
+                                            {{class.name}}
                                         </h3>
+                                        <div class="flex-container">
+                                            <li *ngFor="let assignments of class.assignments; let x =index">
+
+                                                <img src="./../../assets/svg/task.svg" class="AssignmentImage ">
+
+                                            </li>
+                                        </div>
                                     </div>
                                 </li>
 
                             </div>
+                            <div class="add ">
+                                <img src="./../../assets/svg/plus.svg " class="AddButton ">
+                            </div>
                         </ng-scrollbar>
                     </div>
+
                 </div>
             </div>
         </li>

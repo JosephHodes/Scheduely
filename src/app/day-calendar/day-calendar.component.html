@@ -10,9 +10,10 @@
             <div class="flex-container">
                 <li *ngFor="let classes of days[todaysday].classes; index as x" style="list-style: none;">
                     <div class="TodaysAssignment">
-                        <h1 class="Classes">{{days[todaysday].classes[x]}}</h1>
+                        <h1 class="Classes">{{classes.name}}</h1>
                     </div>
                 </li>
+                <div></div>
             </div>
         </ng-scrollbar>
     </div>
@@ -29,7 +30,7 @@
             <div class="flex-container">
                 <li *ngFor="let classes of SelectedDay.classes; index as x" style="list-style: none;">
                     <div class="TodaysAssignment">
-                        <h1 class="Classes">{{SelectedDay.classes[x]}}</h1>
+                        <h1 class="Classes">{{classes.name}}</h1>
                     </div>
                     <div></div>
 

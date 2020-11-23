@@ -22,13 +22,21 @@ export class GetjsonService {
   d: any;
   constructor(private firestore: AngularFirestore) {
     this.datesCol = this.firestore.collection('Dates');
-    this.d = this.firestore.collection<FirestoreDayDoc>('Dates');
+    this.d = this.firestore.collection<Day[]>('Dates');
   }
 
-  public getDays() {
+  public getDays(): Observable<Day[]> {
     // If you don't need the document id in the return, then use valueChanges.
-    return this.firestore.collection('Dates').doc('qLfLHyFdv1hTVXcH9pyc').snapshotChanges()
+    return this.firestore.collection<any>('Dates').doc('5DuPxE3rj9SbN4iwT6WU').snapshotChanges()
+
+      .pipe(
+        map(action => {
+          console.log(action.payload.data().data as Day[])
+          return action.payload.data().data as Day[]
+        })
+      )
   }
+
 
   // public getAllDates(): Observable<Day[][]> {
   //   // If you don't need the document id in the return, then use valueChanges.
@@ -39,10 +47,10 @@ export class GetjsonService {
 
   async pushdata(data: Day[]): Promise<void> {
     try {
+
       this.d.update({ data })
     } catch { err => console.log(err) }
   }
-
 }
 
 

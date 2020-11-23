@@ -85,12 +85,12 @@
     -webkit-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.418);
     -moz-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.418);
     box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.418);
+    padding: 1%;
 }
 
 .classes {
     text-align: center;
     font-size: small;
-    padding-top: .8vh;
 }
 
 .flex-container {
@@ -116,14 +116,22 @@
     margin-top: 1vh;
     width: 10vw;
     text-size-adjust: 100px;
-    background-color: rgb(244, 245, 248);
+    background-color: #2196F3;
     border-radius: 12px;
-    -webkit-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.418);
-    -moz-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.418);
-    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.418);
 }
 
 .AddButton {
-    height: 2vw;
+    padding: 5%;
+    height: 1.9vw;
     width: 2vw;
+    margin-left: 39%;
+}
+
+.AssignmentImage {
+    height: 2vh;
+    width: 2vw;
+    display: block;
+    margin-left: 5%;
+    margin-right: auto;
+    display: flex;
 }

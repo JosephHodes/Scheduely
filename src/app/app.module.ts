@@ -14,7 +14,8 @@ import { NgScrollbarModule } from 'ngx-scrollbar';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire';
-import { firebasestuff } from './../apikey/apikey'
+import { firebasestuff } from './../apikey/apikey';
+import { AssignmentModalComponent } from './assignment-modal/assignment-modal.component'
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { firebasestuff } from './../apikey/apikey'
     calendarComponent,
     DayCalendarComponent,
     NextViewComponent,
-    SevenDayCalanderComponent
+    SevenDayCalanderComponent,
+    AssignmentModalComponent
   ],
   imports: [
     BrowserModule,

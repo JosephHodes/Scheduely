@@ -7,7 +7,7 @@ export interface Test {
     value: number;
 }
 export interface Day {
-    weekday: Array<string>;
+    weekday: string;
     classes: Classes[];
 }
 export interface classes {

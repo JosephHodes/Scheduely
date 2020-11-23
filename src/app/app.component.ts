@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Classes, Day } from './classes'
 import { GetjsonService } from './getjson.service'
-import { pipe, Subscription } from 'rxjs'
+import { Observable, pipe, Subscription } from 'rxjs'
 import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-root',
@@ -11,6 +11,7 @@ import { map } from 'rxjs/operators';
 export class AppComponent implements OnInit {
   JsonSub: Subscription;
   FixedDays: Day[];
+  FixedDay$: Observable<Day[]>
   Title = 'Calendar'
   deselected: boolean = true;
   SelectedDayClass: Classes;
@@ -28,10 +29,8 @@ export class AppComponent implements OnInit {
   dayArray: Day[];
 
   ngOnInit() {
-    this.finaleJson()
-    setInterval(() => {
-      this.dayArray = this.FixedDays
-    }, 1000)
+    this.FixedDay$ = this.getserv.getDays()
+    this.JsonSub = this.FixedDay$.subscribe(next => this.FixedDays = next)
   }
   ngOnDestroy() {
     if (this.JsonSub) {
@@ -39,8 +38,5 @@ export class AppComponent implements OnInit {
       console.log(this.FixedDays);
     }
   }
-  finaleJson() {
-    this.JsonSub = this.getserv.getDays().subscribe(res =>
-      this.FixedDays = (res.payload.data() as Day[]))
-  }
+
 }
