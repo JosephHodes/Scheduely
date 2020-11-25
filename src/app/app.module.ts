@@ -11,7 +11,7 @@ import { DayCalendarComponent } from './day-calendar/day-calendar.component';
 import { NextViewComponent } from './next-view/next-view.component';
 import { SevenDayCalanderComponent } from './seven-day-calander/seven-day-calander.component';
 import { NgScrollbarModule } from 'ngx-scrollbar';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire';
 import { firebasestuff } from './../apikey/apikey';
