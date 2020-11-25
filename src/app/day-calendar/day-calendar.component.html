@@ -1,6 +1,7 @@
 <div class="DayComp">
     <div *ngIf="deselected;else dayselected">
         <div class="NameOfDay">
+
             <h1 class="Day">
                 {{days[todaysday].weekday}}
             </h1>
@@ -9,17 +10,40 @@
         <ng-scrollbar>
             <div class="day-container">
                 <li *ngFor="let classes of days[todaysday].classes; index as x" style="list-style: none;">
-
                     <div class="TodaysAssignment">
                         <div class="flex-container">
-                            <h1 class="Classes">{{classes.name}}</h1>
+                            <div class="ClassesContainer">
+                                <h1 class="Classes">{{classes.name}}</h1>
+                            </div>
                             <div class="classGap"></div>
+
+                            <div class="flex-column">
+                                <li *ngFor="let assignment of classes.assignments">
+                                    <div class="Class">
+                                        <div class="ClassesName">
+                                            <h1 class="Name">{{assignment.name}}</h1>
+                                        </div>
+                                        <div class="AssignmentGap"></div>
+                                        <div class="AssignmentName">
+                                            <h2 class="AssignmentNameText">
+
+                                            </h2>
+                                        </div>
+
+                                    </div>
+                                    <div class="Add">
+                                        <img src="./../../assets/svg/plus.svg" class="AddImage">
+                                    </div>
+                                </li>
+
+                            </div>
                         </div>
                     </div>
                 </li>
-                <div class="columnGap"></div>
             </div>
+
         </ng-scrollbar>
+
     </div>
 
 
@@ -27,6 +51,7 @@
 
     <ng-template #dayselected>
         <div class="NameOfDay">
+
             <h1 class="Day">
                 {{SelectedDay.weekday}}
             </h1>
@@ -36,7 +61,29 @@
             <div class="day-container">
                 <li *ngFor="let classes of SelectedDay.classes; index as x" style="list-style: none;">
                     <div class="TodaysAssignment">
-                        <h1 class="Classes">{{classes.name}}</h1>
+                        <div class="flex-container">
+                            <div class="ClassesContainer">
+                                <h1 class="Classes">{{classes.name}}</h1>
+                            </div>
+                            <div class="classGap"></div>
+
+                            <div class="flex-column">
+                                <li *ngFor="let assignment of classes.assignments">
+                                    <div class="Class">
+                                        <div class="ClassesName">
+                                            <h1 class="Name">{{assignment.name}}</h1>
+                                        </div>
+                                        <div class="AssignmentGap"></div>
+                                        <div class="AssignmentName">
+                                            <h2 class="AssignmentNameText">
+
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </li>
+
+                            </div>
+                        </div>
                     </div>
                 </li>
             </div>

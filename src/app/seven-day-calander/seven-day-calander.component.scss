@@ -19,7 +19,7 @@
     background-color: $eachbackgroundcolor;
     margin: .5vw;
     padding: .5vw;
-    margin-left: 1.1vw;
+    margin-left: 1vw;
     border-radius: 12px;
     -webkit-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.75);
@@ -92,11 +92,13 @@
 .classes {
     text-align: center;
     font-size: small;
+    margin: 0;
 }
 
 .flex-container {
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
 .scrollbar {
@@ -126,13 +128,4 @@
     height: 1.9vw;
     width: 2vw;
     margin-left: 39%;
-}
-
-.AssignmentImage {
-    height: 2vh;
-    width: 2vw;
-    display: block;
-    margin-left: 5%;
-    margin-right: auto;
-    display: flex;
 }

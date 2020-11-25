@@ -20,4 +20,5 @@ export interface classes {
 export interface Assignments {
     name: string;
     type: string;
+
 }

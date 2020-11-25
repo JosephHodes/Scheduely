@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "calendar-7ba68": {
+      "hosting": {
+        "Calendar": [
+          "calendar-7ba68"
+        ]
+      }
+    }
+  }
+}
