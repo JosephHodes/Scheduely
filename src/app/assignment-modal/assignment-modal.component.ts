@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core'
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap'
 
 @Component({
   selector: 'app-assignment-modal',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./assignment-modal.component.scss']
 })
 export class AssignmentModalComponent implements OnInit {
+  @Input() assignment: any
 
-  constructor() { }
+  constructor(public activeModal: NgbActiveModal) { }
 
   ngOnInit(): void {
+  }
+
+  closeModal(): void {
+    this.activeModal.dismiss()
   }
 
 }
