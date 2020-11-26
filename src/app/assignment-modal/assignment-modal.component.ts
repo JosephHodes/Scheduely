@@ -16,6 +16,7 @@ export class AssignmentModalComponent implements OnInit {
 
   closeModal(): void {
     this.activeModal.dismiss()
+
   }
 
 }

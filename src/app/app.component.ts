@@ -20,13 +20,19 @@ export class AppComponent implements OnInit {
   SelectedDayClass: Classes
   dayArray: Day[]
 
+
   constructor(private getserv: GetjsonService, private modalService: NgbModal) {
 
   }
 
   ngOnInit() {
     this.FixedDay$ = this.getserv.getDays()
-    this.JsonSub = this.FixedDay$.subscribe(next => this.FixedDays = next)
+    this.JsonSub = this.FixedDay$.subscribe(next => {
+      if (next.length > 0)
+        this.FixedDays = next
+    }, err => {
+      console.log(err)
+    })
   }
 
   ngOnDestroy() {
@@ -45,8 +51,10 @@ export class AppComponent implements OnInit {
   }
 
   openModal() {
-    const modalRef = this.modalService.open(AssignmentModalComponent, { size: 'sm', backdrop: 'static' }) // open the AssignmentModalComponent (which we import above) as a component
-    modalRef.componentInstance.assignment = {} // pass data to your modal component
+    const modalRef = this.modalService.open(AssignmentModalComponent, { size: 'xl', backdrop: 'static' }) // open the AssignmentModalComponent (which we import above) as a component
+    modalRef.componentInstance.assignment = {
+
+    } // pass data to your modal component
   }
 
 }

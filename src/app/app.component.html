@@ -1,12 +1,20 @@
-<main>
-  <button (click)="openModal()">open modal</button>
-    <div class="mainPage">
-        <div class="top">
-            <app-day-calendar [days]="FixedDays" class="tl" [deslected]="deselected" [SelectedDay]="SelectedDayClass"></app-day-calendar>
-            <app-next-view class="tr" (Unselectnext)="checkifdeslected($event)"></app-next-view>
+<div *ngIf="FixedDays.length>0;else Loading">
+    <main>
+        <!-- <button (click)="openModal()">open modal</button> -->
+        <div class="mainPage">
+            <div class="top">
+                <app-day-calendar [days]="FixedDays" class="tl" [deslected]="deselected" [SelectedDay]="SelectedDayClass"></app-day-calendar>
+                <app-next-view class="tr" (Unselectnext)="checkifdeslected($event)"></app-next-view>
+            </div>
+            <div class="sevdaybac">
+                <app-seven-day-calendar [days]="FixedDays" (DaySelected)="DaySelected($event)" (DeSelected)="checkifdeslected($event)"></app-seven-day-calendar>
+            </div>
         </div>
-        <div class="sevdaybac">
-            <app-seven-day-calendar [days]="FixedDays" (DaySelected)="DaySelected($event)" (DeSelected)="checkifdeslected($event)"></app-seven-day-calendar>
+    </main>
+</div>
+<ng-template #Loading>
+    <div class="LoadingAnimation">
+        <div class="dot">
         </div>
     </div>
-</main>
+</ng-template>
