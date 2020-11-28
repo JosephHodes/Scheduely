@@ -52,9 +52,7 @@ export class AppComponent implements OnInit {
 
   openModal() {
     const modalRef = this.modalService.open(AssignmentModalComponent, { size: 'xl', backdrop: 'static' }) // open the AssignmentModalComponent (which we import above) as a component
-    modalRef.componentInstance.assignment = {
-
-    } // pass data to your modal component
+    modalRef.componentInstance.assignment = this.FixedDays
   }
 
 }

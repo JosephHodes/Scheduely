@@ -6,6 +6,7 @@ import { calendarComponent } from './calender/calendar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { DayCalendarComponent } from './day-calendar/day-calendar.component';
 import { NextViewComponent } from './next-view/next-view.component';
@@ -30,7 +31,7 @@ import { AssignmentModalComponent } from './assignment-modal/assignment-modal.co
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatGridListModule,
+    MatGridListModule, ReactiveFormsModule,
     CommonModule, NgScrollbarModule, NgbModule, HttpClientModule,
     AngularFireModule.initializeApp(firebasestuff),
     AngularFireModule
