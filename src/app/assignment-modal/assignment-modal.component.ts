@@ -14,7 +14,7 @@ export class AssignmentModalComponent implements OnInit {
   @Input() Day: Day[]
   @Input() Dayselected: any
   isSubmitted = false;
-  todaysday: number
+  todaysday: number;
   City: any = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Thursday', 'Sunday']
   constructor(public activeModal: NgbActiveModal, public fb: FormBuilder) {
     this.City = this.arrayRemove(this.City, this.todaysday);
