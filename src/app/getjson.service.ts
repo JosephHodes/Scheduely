@@ -9,7 +9,7 @@ import {
   AngularFirestoreDocument,
 } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
-import {auth} from 'firebase/app'
+import auth from '../../node_modules/firebase'
 import { Router } from '@angular/router';
 
 interface FirestoreDayDoc {
@@ -40,7 +40,7 @@ export class GetjsonService {
 
   }
   async googleSignin() {
-    const provider = new auth.GoogleAuthProvider();
+    const provider = new auth.auth.GoogleAuthProvider;
     const credential = await this.afAuth.signInWithPopup(provider);
     return this.updateUserData(credential.user);
   }
