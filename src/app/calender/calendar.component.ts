@@ -1,6 +1,6 @@
 
 // import * as moment from 'moment'
-import { Component, OnDestroy, OnInit } from '@angular/core'
+import { Component, Input, OnDestroy, OnInit } from '@angular/core'
 import { Classes, Day } from './../classes'
 import { GetjsonService } from './../getjson.service'
 import { Observable, pipe, Subscription } from 'rxjs'
@@ -16,6 +16,7 @@ import { AssignmentModalComponent } from './../assignment-modal/assignment-modal
 
 //fix this whole god damn file bad code bad code bad code
 export class calendarComponent implements OnInit {
+  @Input('data') bob;
   JsonSub: Subscription
   FixedDays: Day[]
   FixedDay$: Observable<Day[]>
@@ -30,8 +31,10 @@ export class calendarComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.FixedDay$ = this.getserv.getDays()
+    this.FixedDay$ = this.getserv.getDays(this.bob);
     this.JsonSub = this.FixedDay$.subscribe(next => {
+      setInterval(()=>console.log(next),1);
+
       if (next.length > 0)
         this.FixedDays = next
     }, err => {

@@ -15,7 +15,8 @@ export class ActualAssignmentModelComponent implements OnInit {
 
   ngOnInit(): void {
     this.AssignmentForm=  this.fb.group({
-      name: ['Monday', [Validators.required]]
+      name: ['', [Validators.required]],
+      type: ['', [Validators.required]]
     })
   }
 

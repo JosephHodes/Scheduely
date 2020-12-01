@@ -26,33 +26,28 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.FixedDay$ = this.getserv.getDays()
-    this.JsonSub = this.FixedDay$.subscribe(next => {
-      if (next.length > 0)
-        this.FixedDays = next
-    }, err => {
-      console.log(err)
-    })
+
+
   }
 
   ngOnDestroy() {
-    if (this.JsonSub) {
-      this.JsonSub.unsubscribe()
-      console.log(this.FixedDays)
-    }
+    // if (this.JsonSub) {
+    //   this.JsonSub.unsubscribe()
+    //   console.log(this.FixedDays)
+    // }
   }
 
-  DaySelected(data: Classes) {
-    this.SelectedDayClass = data
-  }
+  // DaySelected(data: Classes) {
+  //   this.SelectedDayClass = data
+  // }
 
-  checkifdeslected(data: boolean) {
-    this.deselected = data
-  }
+  // checkifdeslected(data: boolean) {
+  //   this.deselected = data
+  // }
 
-  openModal() {
-    const modalRef = this.modalService.open(AssignmentModalComponent, { size: 'xl', backdrop: 'static' }) // open the AssignmentModalComponent (which we import above) as a component
-    modalRef.componentInstance.assignment = this.FixedDays
-  }
+  // openModal() {
+  //   const modalRef = this.modalService.open(AssignmentModalComponent, { size: 'xl', backdrop: 'static' }) // open the AssignmentModalComponent (which we import above) as a component
+  //   modalRef.componentInstance.assignment = this.FixedDays
+  // }
 
 }

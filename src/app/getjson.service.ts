@@ -11,6 +11,8 @@ import {
 import { AngularFireAuth } from '@angular/fire/auth';
 import auth from '../../node_modules/firebase'
 import { Router } from '@angular/router';
+import { UpdateOutputFileStampsProject } from 'typescript';
+
 
 interface FirestoreDayDoc {
   days: Day[]
@@ -42,28 +44,28 @@ export class GetjsonService {
   async googleSignin() {
     const provider = new auth.auth.GoogleAuthProvider;
     const credential = await this.afAuth.signInWithPopup(provider);
+    console.log(credential)
     return this.updateUserData(credential.user);
   }
 
   private updateUserData(user) {
     // Sets user data to firestore on login
-    const userRef: AngularFirestoreDocument<User> = this.firestore.doc(`users/${user.uid}`);
+    const userRef: AngularFirestoreDocument<any>= this.firestore.doc(`users/${user.uid}`);
 
-    const data = {
-      uid: user.uid
-    }
+    const data ={uid:user.uid,
+      docdata:[ {classes:[], weekday:'monday'},{classes:[], weekday:'Tuesday'},{classes:[], weekday:'Wednesday'},{classes:[], weekday:'Thursday'},{classes:[], weekday:'Friday'},{classes:[], weekday:'Saturday'},{classes:[], weekday:'Sunday'},]}
 
     return userRef.set(data, { merge: true })
 
   }
-  public getDays(): Observable<Day[]> {
+  public getDays(userid): Observable<Day[]> {
     // If you don't need the document id in the return, then use valueChanges.
-    return this.firestore.collection<any>('Dates').doc('5DuPxE3rj9SbN4iwT6WU').snapshotChanges()
+    return this.firestore.doc<any>(`users/${userid}`).snapshotChanges()
 
       .pipe(
         map(action => {
-          console.log(action.payload.data().data as Day[])
-          return action.payload.data().data as Day[]
+          console.log(action.payload.data().docdata as Day[])
+          return action.payload.data().docdata as Day[]
         })
       )
   }
