@@ -16,6 +16,7 @@ export class DayCalendarComponent implements OnInit {
   onClick() {
     let x = this.ngb.open(ActualAssignmentModelComponent, { backdrop: 'static', size: 'sm' })
     x.componentInstance.assignment = this.days
+    x.componentInstance.data
   }
   todaysday: number;
   ngOnInit(): void {

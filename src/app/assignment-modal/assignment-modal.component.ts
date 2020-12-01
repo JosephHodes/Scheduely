@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core'
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap'
 import { Day, classes } from '../classes';
+import {GetjsonService} from './../getjson.service';
 
 @Component({
   selector: 'app-assignment-modal',
@@ -11,6 +12,7 @@ import { Day, classes } from '../classes';
 export class AssignmentModalComponent implements OnInit {
   @Input('assignment') assignment: Day[];
   @Input() Dayselected: any
+  @Input('data') userid;
   isSubmitted = false;
   todaysday: number;
   public ClassForm: FormGroup
@@ -18,7 +20,7 @@ export class AssignmentModalComponent implements OnInit {
   dayorclass:boolean=false;
   selectedNumber=22;
   City: any = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday','Sunday']
-  constructor(public activeModal: NgbActiveModal, public fb: FormBuilder) {
+  constructor(public activeModal: NgbActiveModal, public fb: FormBuilder, private worker:GetjsonService) {
 
   }
   // arrayRemove(arr, value) {
@@ -96,7 +98,8 @@ export class AssignmentModalComponent implements OnInit {
       assignments: []
     }
     this.assignment[weekdayIndex].classes.push(newClass)
-    console.log(this.assignment[weekdayIndex].classes)
+
+  this.worker.pushdata(this.assignment,this.userid)
   }
 
 }

@@ -9,7 +9,7 @@ import { Classes, Day, Test } from './../classes'
   styleUrls: ['./seven-day-calander.component.scss']
 })
 export class SevenDayCalanderComponent implements OnInit {
-
+  @Input('sevendayid') userid;
   @Input('days') fixedDays: Day[];
   @Output('DaySelected') DaySelected = new EventEmitter<Classes>();
   @Output('DeSelected') DeSelected = new EventEmitter<boolean>();

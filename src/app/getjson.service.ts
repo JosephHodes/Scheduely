@@ -81,10 +81,10 @@ export class GetjsonService {
   //   );
   // }
 
-  async pushdata(data: Day[]): Promise<void> {
+  async pushdata(data: Day[],userid): Promise<void> {
     try {
 
-      this.d.update({ data })
+      this.firestore.doc<any>(`users/${userid}`).update({ data })
     } catch { err => console.log(err) }
   }
 }
