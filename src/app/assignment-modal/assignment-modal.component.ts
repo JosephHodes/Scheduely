@@ -46,7 +46,7 @@ export class AssignmentModalComponent implements OnInit {
     })
 
   }
-
+  city:String =''
   closeModal(): void {
     this.activeModal.dismiss()
 

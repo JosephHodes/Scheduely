@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 import { Classes } from './../classes'
 import { AssignmentModalComponent } from './../assignment-modal/assignment-modal.component'
+import {ActualAssignmentModelComponent} from './../actual-assignment-model/actual-assignment-model.component'
 @Component({
   selector: 'app-day-calendar',
   templateUrl: './day-calendar.component.html',
@@ -13,7 +14,7 @@ export class DayCalendarComponent implements OnInit {
   @Input('deslected') deselected: boolean;
   constructor(private ngb: NgbModal) { }
   onClick() {
-    let x = this.ngb.open(AssignmentModalComponent, { backdrop: 'static', size: 'sm' })
+    let x = this.ngb.open(ActualAssignmentModelComponent, { backdrop: 'static', size: 'sm' })
     x.componentInstance.assignment = this.days
   }
   todaysday: number;

@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import {AssignmentModalComponent} from './../assignment-modal/assignment-modal.component'
 import { Classes, Day, Test } from './../classes'
 
 @Component({
@@ -34,10 +36,16 @@ export class SevenDayCalanderComponent implements OnInit {
     return ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"][dayIndex] || '';
   }
   x = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-  constructor() {
+  constructor(private ngb:NgbModal) {
 
     console.log(this.fixedDays);
+
   }
+  onClick() {
+    let x = this.ngb.open(AssignmentModalComponent, { backdrop: 'static', size: 'sm' })
+    x.componentInstance.assignment = this.fixedDays
+  }
+
   sorted: Test[]
   GetClass(classic: Classes) {
     this.DaySelected.emit(classic);
@@ -46,6 +54,7 @@ export class SevenDayCalanderComponent implements OnInit {
     let x = false
     this.DeSelected.emit(x)
   }
+
 
   ngOnInit(): void {
     console.log(this.fixedDays)

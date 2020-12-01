@@ -68,7 +68,7 @@ export class GetjsonService {
       )
   }
   async signOut() {
-    await auth.signOut();
+    await auth.auth().signOut();
     this.router.navigate(['/']);
   }
 

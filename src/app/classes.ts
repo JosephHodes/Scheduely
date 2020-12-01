@@ -8,7 +8,7 @@ export interface Test {
 }
 export interface Day {
     weekday: string;
-    classes: Classes[];
+    classes: classes[];
 }
 export interface classes {
     name: string;
