@@ -3,7 +3,7 @@
 </button>
 <form [formGroup]="AssignmentForm">
   <label>Weekday</label>
-  <select class="custom-select" formControlName="weekday"> <!-- (change)="changeCity($event)" -->
+  <select class="custom-select" formControlName="weekday">
     <option *ngFor="let city  of City" [ngValue]="city" >{{city}}</option>
   </select>
 

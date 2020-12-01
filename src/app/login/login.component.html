@@ -5,7 +5,7 @@
   <h3>Howdy, GUEST</h3>
   <p>Login to get started...</p>
 
-  <button (click)="auth.googleSignin()">
+  <button (click)="auth.googleSignin()" style="margin: auto; margin-top: 50%; width:3vw; height: 3vh;">
       <i class="fa fa-google"></i> Connect Google
   </button>
 
@@ -14,7 +14,6 @@
   <div *ngIf="auth.user$ | async as user">
   <div style="background-color: white;">
 <app-calendar [data]="user.uid"></app-calendar>
-<button (click)="auth.signOut()">signout</button>
 </div>
 </div>
 </ng-template>

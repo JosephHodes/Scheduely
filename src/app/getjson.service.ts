@@ -25,7 +25,7 @@ export class GetjsonService {
   user$: Observable<User>;
   private readonly datesCol: AngularFirestoreCollection<FirestoreDayDoc>;
   d: any;
-  constructor(private afAuth: AngularFireAuth,private firestore: AngularFirestore,private router: Router) {
+  constructor(private afAuth: AngularFireAuth,private firestore: AngularFirestore,private router: Router, private http:HttpClient) {
     this.datesCol = this.firestore.collection('Dates');
     this.d = this.firestore.collection<Day[]>('Dates');
     this.user$ = this.afAuth.authState.pipe(
@@ -73,7 +73,9 @@ export class GetjsonService {
     await auth.auth().signOut();
     this.router.navigate(['/']);
   }
-
+public getreq(){
+  return this.http.get('https://aefschools.my.webex.com/mw3300/mywebex/atlasbrand.do?siteurl=aefschools.my&Rnd="')
+}
   // public getAllDates(): Observable<Day[][]> {
   //   // If you don't need the document id in the return, then use valueChanges.
   //   return this.datesCol.valueChanges().pipe(
@@ -84,7 +86,8 @@ export class GetjsonService {
   async pushdata(data: any,userid): Promise<void> {
     try {
 
-      this.firestore.doc<any>(`users/${userid}`).set(data, { merge: true })
+      this.firestore.doc<any>(`users/${userid}`).set(data, { merge: true }).catch(err=>console.log(err))
+      console.log("PUSHED!!")
     } catch { err => console.log(err) }
   }
 }

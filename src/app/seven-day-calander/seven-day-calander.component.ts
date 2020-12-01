@@ -13,25 +13,25 @@ export class SevenDayCalanderComponent implements OnInit {
   @Input('days') fixedDays: Day[];
   @Output('DaySelected') DaySelected = new EventEmitter<Classes>();
   @Output('DeSelected') DeSelected = new EventEmitter<boolean>();
-  convert12to24(time: string,) {
-    let splitTime = time.split(' ');
+  // convert12to24(time: string,) {
+  //   let splitTime = time.split(' ');
 
-    let hourMin = splitTime[0].split(":");
+  //   let hourMin = splitTime[0].split(":");
 
-    if (hourMin[0] === '12') {
-      hourMin[0] = '0';
-    }
-    if (splitTime[1] === 'pm') {
-      hourMin[0] = (parseInt(hourMin[0], 10) + 12).toString();
-    }
-    if (hourMin[0] === '12' && splitTime[1] === 'PM') { hourMin[0] = '00'; }
-    return hourMin[0] + ":" + hourMin[1];
-  }
+  //   if (hourMin[0] === '12') {
+  //     hourMin[0] = '0';
+  //   }
+  //   if (splitTime[1] === 'pm') {
+  //     hourMin[0] = (parseInt(hourMin[0], 10) + 12).toString();
+  //   }
+  //   if (hourMin[0] === '12' && splitTime[1] === 'PM') { hourMin[0] = '00'; }
+  //   return hourMin[0] + ":" + hourMin[1];
+  // }
 
-  convert24tomins(time: string) {
-    let splitTime = time.split(':');
-    return (parseInt(splitTime[0]) * 60) + splitTime[1];
-  }
+  // convert24tomins(time: string) {
+  //   let splitTime = time.split(':');
+  //   return (parseInt(splitTime[0]) * 60) + splitTime[1];
+  // }
   dayOfWeekAsString(dayIndex) {
     return ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"][dayIndex] || '';
   }

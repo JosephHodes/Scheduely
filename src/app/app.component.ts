@@ -14,11 +14,7 @@ import { AssignmentModalComponent } from './assignment-modal/assignment-modal.co
 export class AppComponent implements OnInit {
   JsonSub: Subscription
   FixedDays: Day[]
-  FixedDay$: Observable<Day[]>
-  Title = 'Calendar'
-  deselected: boolean = true
-  SelectedDayClass: Classes
-  dayArray: Day[]
+
 
 
   constructor(private getserv: GetjsonService, private modalService: NgbModal) {
@@ -26,7 +22,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-
 
   }
 

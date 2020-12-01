@@ -20,6 +20,7 @@ import { firebasestuff } from './../apikey/apikey';
 import { AssignmentModalComponent } from './assignment-modal/assignment-modal.component'
 import { LoginComponent } from './login/login.component';
 import { ActualAssignmentModelComponent } from './actual-assignment-model/actual-assignment-model.component';
+import { SettingModalComponent } from './setting-modal/setting-modal.component';
 const routes: Routes =[
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -33,7 +34,8 @@ const routes: Routes =[
     SevenDayCalanderComponent,
     AssignmentModalComponent,
     LoginComponent,
-    ActualAssignmentModelComponent
+    ActualAssignmentModelComponent,
+    SettingModalComponent
   ],exports: [RouterModule],
   imports: [
     BrowserModule,

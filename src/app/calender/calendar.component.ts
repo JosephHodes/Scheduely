@@ -36,9 +36,16 @@ export class calendarComponent implements OnInit {
 
       if (next.length > 0)
         this.FixedDays = next
+      // for (let i=0;this.FixedDays.length>0;i++)
+      // {
+      //   for (let x = 0; this.FixedDays[i].classes; x++){
+      //     this.FixedDays[i].classes[x].start_time = _.sortBy()
+      //   }
+      // }
     }, err => {
       console.log(err)
     })
+
   }
 
   ngOnDestroy() {

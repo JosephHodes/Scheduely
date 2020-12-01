@@ -99,8 +99,8 @@ console.log(this.getTimezone)
       assignments: []
     }
     this.assignment[weekdayIndex].classes.push(newClass)
-
-  this.worker.pushdata(this.assignment,this.userid)
+    let x =this.assignment
+  this.worker.pushdata(x ,this.userid)
   }
 
 }
