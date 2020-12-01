@@ -22,3 +22,6 @@ export interface Assignments {
     type: string;
 
 }
+export interface User {
+  uid: string;
+}

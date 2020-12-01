@@ -1,0 +1,117 @@
+@import './../variables.scss';
+// .mainPage {
+//     background-color: #0f4c75;
+//     width: $mainPage_width;
+//     height: $mainPage_height;
+//     margin: $mainPage_margin;
+//     border-radius: $mainPage_border-radious;
+// }
+// .flex-container {
+//     width: $flexcont-width;
+//     height: $flexcont-height;
+//     display: $flexcont-display;
+//     flex-direction: $flexcont-direction;
+// }
+main {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 4vh;
+}
+
+.mainPage {
+    max-width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: $secondarybackground;
+}
+
+.sevdaybac {
+    margin-top: 1%;
+}
+
+main * {
+    flex-grow: 1;
+}
+
+.top {
+    display: flex;
+    background-color: $secondarybackground;
+    height: 45vh;
+}
+
+.top * {
+    flex-grow: 1;
+}
+
+.top .tl {
+    background-color: $secondarybackground;
+    width: 10%;
+}
+
+.top .tr {
+    background-color: $secondarybackground;
+    width: 10%;
+}
+
+.b {
+    background-color: $secondarybackground;
+}
+
+.LoadingAnimation {
+    height: 400px;
+    width: 400px;
+    background-color: $MainBackground;
+    margin: auto auto;
+    margin-top: 29.55vh;
+    padding: 25px;
+}
+
+.dot {
+    height: 100px;
+    width: 100px;
+    animation-name: Loading;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+    background-color: yellow;
+}
+
+@keyframes Loading {
+    0% {
+        background-color: aqua;
+    }
+    25% {
+        background-color: blueviolet;
+        margin-left: 200px;
+        margin-top: 0%;
+        border-top-left-radius: 36px;
+    }
+    50% {
+        background-color: cadetblue;
+        border-top-right-radius: 40px;
+        border-top-left-radius: 40px;
+        margin-top: 200px;
+        margin-left: 200px;
+    }
+    75% {
+        border-top-right-radius: 45px;
+        border-top-left-radius: 45px;
+        border-bottom-right-radius: 45px;
+        margin-top: 200px;
+        margin-left: 0px;
+        background-color: red;
+    }
+    100% {
+        border-top-right-radius: 50px;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+        border-top-left-radius: 50px;
+    }
+}

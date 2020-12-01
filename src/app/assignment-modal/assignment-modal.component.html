@@ -1,20 +1,46 @@
 <button (click)="closeModal()" style="margin-left:70%; background-color: red;border-style: solid;border-color: #ffffff;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ffffff" background-color="#FF0000" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg></button>
 
-<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
-    <div class="group-gap">
 
-        <div class="d-block my-3">
-            <div class="mb-3">
-                <select class="custom-select" (change)="changeCity($event)" formControlName="cityName">
-                <option value="">{{assignment[todaysday].weekday}}</option>
-                <option *ngFor="let city of City" [ngValue]="city">{{city}}</option>
-             </select>
+  <div *ngIf="dayorclass;else AssignmentForm">
+    <div (click)="openClassform()">Add a assignment</div>
+<form [formGroup]="ClassForm">
+  <div class="group-gap">
 
-                <div class="invalid-feedback" *ngIf="isSubmitted && cityName.errors?.required">
-                    <sup>*</sup>Please enter your city name
-                </div>
-            </div>
+    <div class="d-block my-3">
+        <div class="mb-3">
+            <select class="custom-select" (change)="changeCity($event)" formControlName="cityName">
+            <option *ngFor="let city  of City" [ngValue]="city">{{city}}</option>
+         </select>
+         <div *ngIf="!(selectedNumber<0 &&!(selectedNumber==8)); else ClassForm">
+          <div>please add a class</div>
+         </div>
         </div>
     </div>
-    <button type="submit" class="btn btn-danger btn-lg btn-block">Submit</button>
+</div>
+  <label>
+    Class Name:
+  <input type="text" formControl="name">
+  </label>
+  <label>
+    Teacher:
+  <input type="text" formControl="teacher">
+  </label>
+  <label>
+    Start Time:
+  <input type="text" formControl="start_time">
+  </label>
+  <label>
+    Duration:
+  <input type="text" formControl="duration">
+  </label>
+  <button type="submit">Submit</button>
 </form>
+  </div>
+
+
+
+<ng-template #AssignmentForm>
+  <div (click)="openClassform()">Add a class</div>
+</ng-template>
+
+

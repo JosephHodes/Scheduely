@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router'
 
 import { DayCalendarComponent } from './day-calendar/day-calendar.component';
 import { NextViewComponent } from './next-view/next-view.component';
@@ -17,7 +18,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire';
 import { firebasestuff } from './../apikey/apikey';
 import { AssignmentModalComponent } from './assignment-modal/assignment-modal.component'
-
+import { LoginComponent } from './login/login.component';
+const routes: Routes =[
+  { path: 'login', component: LoginComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+]
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,8 +30,9 @@ import { AssignmentModalComponent } from './assignment-modal/assignment-modal.co
     DayCalendarComponent,
     NextViewComponent,
     SevenDayCalanderComponent,
-    AssignmentModalComponent
-  ],
+    AssignmentModalComponent,
+    LoginComponent
+  ],exports: [RouterModule],
   imports: [
     BrowserModule,
     FormsModule,
@@ -34,7 +40,8 @@ import { AssignmentModalComponent } from './assignment-modal/assignment-modal.co
     MatGridListModule, ReactiveFormsModule,
     CommonModule, NgScrollbarModule, NgbModule, HttpClientModule,
     AngularFireModule.initializeApp(firebasestuff),
-    AngularFireModule
+    AngularFireModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

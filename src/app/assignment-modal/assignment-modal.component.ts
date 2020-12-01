@@ -10,14 +10,17 @@ import { Day } from '../classes';
   styleUrls: ['./assignment-modal.component.scss']
 })
 export class AssignmentModalComponent implements OnInit {
-  @Input('assignment') assignment: any
+  @Input('assignment') assignment: Day[];
   @Input() Day: Day[]
   @Input() Dayselected: any
   isSubmitted = false;
   todaysday: number;
-  City: any = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Thursday', 'Sunday']
+
+  dayorclass:boolean=false;
+ selectedNumber=22;
+  City: any = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday','Sunday']
   constructor(public activeModal: NgbActiveModal, public fb: FormBuilder) {
-    this.City = this.arrayRemove(this.City, this.todaysday);
+
   }
   arrayRemove(arr, value) {
 
@@ -40,24 +43,40 @@ export class AssignmentModalComponent implements OnInit {
     this.activeModal.dismiss()
 
   }
+
   changeCity(e) {
     console.log(e.value)
     this.cityName.setValue(e.target.value, {
       onlySelf: true
     })
+    this.selectedNumber= parseInt(e.target.value.substring(0,1));
+    if(typeof this.assignment[this.selectedNumber].classes !== 'undefined'){
+      this.selectedNumber-=100;
+    }
+    if(e.value = undefined){
+      this.selectedNumber==8;
+    }
+    console.log(this.selectedNumber)
   }
-  registrationForm = this.fb.group({
-    cityName: ['', [Validators.required]]
-  })
+ClassForm = this.fb.group({
+    cityName: ['', [Validators.required]],
+    name:['', [Validators.required]],
+    teacher:['', [Validators.required]],
+    start_time:['', [Validators.required]],
+    duration:['', [Validators.required]],  })
+
+    openClassform(){
+      this.dayorclass=!this.dayorclass
+    }
   get cityName() {
-    return this.registrationForm.get('cityName');
+    return this.ClassForm.get('cityName');
   }
   onSubmit() {
     this.isSubmitted = true;
-    if (!this.registrationForm.valid) {
-      return false;
+    if (!this.ClassForm.valid) {
+      return false
     } else {
-      alert(JSON.stringify(this.registrationForm.value))
+      alert(JSON.stringify(this.ClassForm.value))
     }
   }
 
