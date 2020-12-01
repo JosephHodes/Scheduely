@@ -1,8 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core'
-import { Validators } from '@angular/forms';
-import { FormBuilder } from '@angular/forms';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap'
-import { Day } from '../classes';
+import { Day, classes } from '../classes';
 
 @Component({
   selector: 'app-assignment-modal',
@@ -11,23 +10,23 @@ import { Day } from '../classes';
 })
 export class AssignmentModalComponent implements OnInit {
   @Input('assignment') assignment: Day[];
-  @Input() Day: Day[]
   @Input() Dayselected: any
   isSubmitted = false;
   todaysday: number;
+  public ClassForm: FormGroup
 
   dayorclass:boolean=false;
- selectedNumber=22;
+  selectedNumber=22;
   City: any = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday','Sunday']
   constructor(public activeModal: NgbActiveModal, public fb: FormBuilder) {
 
   }
-  arrayRemove(arr, value) {
-
-    return arr.filter(function (ele) {
-      return ele != value;
-    });
-  }
+  // arrayRemove(arr, value) {
+  //
+  //   return arr.filter(function (ele) {
+  //     return ele != value;
+  //   });
+  // }
 
   ngOnInit(): void {
     let day = new Date()
@@ -37,6 +36,15 @@ export class AssignmentModalComponent implements OnInit {
     } else {
       this.todaysday--;
     }
+
+    this.ClassForm = this.fb.group({
+      weekday: ['Monday', [Validators.required]],
+      name:['', [Validators.required]],
+      teacher:['', [Validators.required]],
+      start_time:['', [Validators.required]],
+      duration:['', [Validators.required]]
+    })
+
   }
 
   closeModal(): void {
@@ -45,8 +53,8 @@ export class AssignmentModalComponent implements OnInit {
   }
 
   changeCity(e) {
-    console.log(e.value)
-    this.cityName.setValue(e.target.value, {
+    console.log(this.city)
+    this.cityName.setValue(this.city, {
       onlySelf: true
     })
     this.selectedNumber= parseInt(e.target.value.substring(0,1));
@@ -58,26 +66,37 @@ export class AssignmentModalComponent implements OnInit {
     }
     console.log(this.selectedNumber)
   }
-ClassForm = this.fb.group({
-    cityName: ['', [Validators.required]],
-    name:['', [Validators.required]],
-    teacher:['', [Validators.required]],
-    start_time:['', [Validators.required]],
-    duration:['', [Validators.required]],  })
 
-    openClassform(){
-      this.dayorclass=!this.dayorclass
-    }
+  openClassform(){
+    this.dayorclass=!this.dayorclass
+  }
+
   get cityName() {
     return this.ClassForm.get('cityName');
   }
+
+  isThereClass() {
+    // !(selectedNumber<0 &&!(selectedNumber==8)); else ClassForm
+    return true
+  }
+
   onSubmit() {
-    this.isSubmitted = true;
-    if (!this.ClassForm.valid) {
-      return false
-    } else {
-      alert(JSON.stringify(this.ClassForm.value))
+    this.isSubmitted = true
+    console.log(this.ClassForm.getRawValue())
+    let formValues = this.ClassForm.getRawValue()
+    let weekday = this.ClassForm.get('weekday').value
+    let weekdayIndex = this.City.indexOf(weekday)
+    console.log(weekdayIndex)
+    console.log(this.assignment[weekdayIndex])
+    let newClass: classes = {
+      name: formValues.name,
+      teacher: formValues.teacher,
+      start_time: formValues.start_time,
+      duration: formValues.duration,
+      assignments: []
     }
+    this.assignment[weekdayIndex].classes.push(newClass)
+    console.log(this.assignment[weekdayIndex].classes)
   }
 
 }

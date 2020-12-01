@@ -5,35 +5,35 @@
     <div (click)="openClassform()">Add a assignment</div>
 <form [formGroup]="ClassForm">
   <div class="group-gap">
-
     <div class="d-block my-3">
         <div class="mb-3">
-            <select class="custom-select" (change)="changeCity($event)" formControlName="cityName">
+          <label>Weekday</label>
+          <select class="custom-select" formControlName="weekday"> <!-- (change)="changeCity($event)" -->
             <option *ngFor="let city  of City" [ngValue]="city">{{city}}</option>
-         </select>
-         <div *ngIf="!(selectedNumber<0 &&!(selectedNumber==8)); else ClassForm">
+          </select>
+         <!-- <div *ngIf="isThereClass()">
           <div>please add a class</div>
-         </div>
+         </div> -->
         </div>
     </div>
-</div>
+  </div>
   <label>
     Class Name:
-  <input type="text" formControl="name">
+  <input type="text" formControlName="name">
   </label>
   <label>
     Teacher:
-  <input type="text" formControl="teacher">
+  <input type="text" formControlName="teacher">
   </label>
   <label>
     Start Time:
-  <input type="text" formControl="start_time">
+  <input type="time" formControlName="start_time">
   </label>
   <label>
     Duration:
-  <input type="text" formControl="duration">
+  <input type="text" formControlName="duration">
   </label>
-  <button type="submit">Submit</button>
+  <button (click)="onSubmit()" type="submit" [disabled]="!ClassForm.valid">Submit</button>
 </form>
   </div>
 
@@ -42,5 +42,3 @@
 <ng-template #AssignmentForm>
   <div (click)="openClassform()">Add a class</div>
 </ng-template>
-
-
