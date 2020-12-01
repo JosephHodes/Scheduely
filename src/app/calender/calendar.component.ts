@@ -33,7 +33,6 @@ export class calendarComponent implements OnInit {
   ngOnInit() {
     this.FixedDay$ = this.getserv.getDays(this.userid);
     this.JsonSub = this.FixedDay$.subscribe(next => {
-      setInterval(()=>console.log(next),1);
 
       if (next.length > 0)
         this.FixedDays = next

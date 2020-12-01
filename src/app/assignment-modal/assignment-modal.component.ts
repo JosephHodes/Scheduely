@@ -29,8 +29,9 @@ export class AssignmentModalComponent implements OnInit {
   //     return ele != value;
   //   });
   // }
-
+getTimezone:any;
   ngOnInit(): void {
+    this.getTimezone= new Date().getTimezoneOffset()
     let day = new Date()
     this.todaysday = day.getDay()
     if (this.todaysday === 0) {
@@ -38,7 +39,7 @@ export class AssignmentModalComponent implements OnInit {
     } else {
       this.todaysday--;
     }
-
+console.log(this.getTimezone)
     this.ClassForm = this.fb.group({
       weekday: ['Monday', [Validators.required]],
       name:['', [Validators.required]],

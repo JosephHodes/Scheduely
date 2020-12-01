@@ -48,7 +48,7 @@ export class GetjsonService {
     return this.updateUserData(credential.user);
   }
 
-  private updateUserData(user) {
+  public updateUserData(user) {
     // Sets user data to firestore on login
     const userRef: AngularFirestoreDocument<any>= this.firestore.doc(`users/${user.uid}`);
 
@@ -81,10 +81,10 @@ export class GetjsonService {
   //   );
   // }
 
-  async pushdata(data: Day[],userid): Promise<void> {
+  async pushdata(data: any,userid): Promise<void> {
     try {
 
-      this.firestore.doc<any>(`users/${userid}`).update({ data })
+      this.firestore.doc<any>(`users/${userid}`).set(data, { merge: true })
     } catch { err => console.log(err) }
   }
 }
