@@ -16,7 +16,7 @@ import { AssignmentModalComponent } from './../assignment-modal/assignment-modal
 
 //fix this whole god damn file bad code bad code bad code
 export class calendarComponent implements OnInit {
-  @Input('data') userid;
+  @Input('Data') Data;
   JsonSub: Subscription
   FixedDays: Day[]
   FixedDay$: Observable<Day[]>
@@ -31,7 +31,7 @@ export class calendarComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.FixedDay$ = this.getserv.getDays(this.userid);
+    this.FixedDay$ = this.getserv.getDays(this.Data);
     this.JsonSub = this.FixedDay$.subscribe(next => {
 
       if (next.length > 0)
@@ -63,8 +63,8 @@ export class calendarComponent implements OnInit {
     this.deselected = data
   }
 
-  openModal() {
-    const modalRef = this.modalService.open(AssignmentModalComponent, { size: 'xl', backdrop: 'static' }) // open the AssignmentModalComponent (which we import above) as a component
-    modalRef.componentInstance.assignment = this.FixedDays
-  }
+  // openModal() {
+  //   const modalRef = this.modalService.open(AssignmentModalComponent, { size: 'xl', backdrop: 'static' }) // open the AssignmentModalComponent (which we import above) as a component
+  //   modalRef.componentInstance.assignment = this.FixedDays
+  // }
 }

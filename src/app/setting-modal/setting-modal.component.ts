@@ -19,5 +19,6 @@ export class SettingModalComponent implements OnInit {
     this.activeModal.dismiss()
 
   }
+  
 
 }

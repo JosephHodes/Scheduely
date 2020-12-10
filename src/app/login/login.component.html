@@ -1,3 +1,4 @@
+<div class="background">
 <div *ngIf="auth.user$ | async; then authenticated else guest">
   <!-- template will replace this div -->
 </div>
@@ -12,8 +13,13 @@
 </ng-template>
 <ng-template #authenticated>
   <div *ngIf="auth.user$ | async as user">
+    <div>
+    {{user.uid}}
+  </div>
   <div style="background-color: white;">
-<app-calendar [data]="user.uid"></app-calendar>
+<app-calendar [Data]="user.uid"></app-calendar>
+
 </div>
 </div>
 </ng-template>
+</div>

@@ -3,7 +3,7 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap'
 import { Day, classes } from '../classes';
 import {GetjsonService} from './../getjson.service';
-
+import { Observable, pipe, Subscription } from 'rxjs'
 @Component({
   selector: 'app-assignment-modal',
   templateUrl: './assignment-modal.component.html',
@@ -89,8 +89,8 @@ console.log(this.getTimezone)
     let formValues = this.ClassForm.getRawValue()
     let weekday = this.ClassForm.get('weekday').value
     let weekdayIndex = this.City.indexOf(weekday)
-    console.log(weekdayIndex)
-    console.log(this.assignment[weekdayIndex])
+    // console.log(weekdayIndex)
+    // console.log(this.assignment[weekdayIndex])
     let newClass: classes = {
       name: formValues.name,
       teacher: formValues.teacher,
@@ -99,8 +99,10 @@ console.log(this.getTimezone)
       assignments: []
     }
     this.assignment[weekdayIndex].classes.push(newClass)
-    let x =this.assignment
-  this.worker.pushdata(x ,this.userid)
+    const docdata = { docdata:this.assignment}
+    console.log(this.userid)
+    this.worker.pushdata(docdata,this.userid).then(res=>console.log(res) ).catch(err=>console.log(err))
+
   }
 
 }

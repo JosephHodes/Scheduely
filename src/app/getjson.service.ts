@@ -32,7 +32,8 @@ export class GetjsonService {
       switchMap(user => {
           // Logged in
         if (user) {
-          return this.firestore.doc<User>(`users/${user.uid}`).valueChanges();
+          console.log((user as any).email)
+          return this.firestore.doc<User>(`users/${(user as any).email}`).valueChanges();
         } else {
           // Logged out
           return of(null);
@@ -44,17 +45,17 @@ export class GetjsonService {
   async googleSignin() {
     const provider = new auth.auth.GoogleAuthProvider;
     const credential = await this.afAuth.signInWithPopup(provider);
-    console.log(credential)
-    return this.updateUserData(credential.user);
+    console.log((credential as any).user.email)
+    return this.updateUserData((credential as any).user.email);
   }
 
   public updateUserData(user) {
     // Sets user data to firestore on login
-    const userRef: AngularFirestoreDocument<any>= this.firestore.doc(`users/${user.uid}`);
-
-    const data ={uid:user.uid,
-      docdata:[ {classes:[], weekday:'monday'},{classes:[], weekday:'Tuesday'},{classes:[], weekday:'Wednesday'},{classes:[], weekday:'Thursday'},{classes:[], weekday:'Friday'},{classes:[], weekday:'Saturday'},{classes:[], weekday:'Sunday'},]}
-
+    const userRef: AngularFirestoreDocument<any>= this.firestore.doc(`users/${user}`);
+      console.log(user)
+     const data ={uid:user,
+      docdata:[ {classes:[], weekday:'monday'},{classes:[], weekday:'Tuesday'},{classes:[], weekday:'Wednesday'},{classes:[], weekday:'Thursday'},{classes:[], weekday:'Friday'}]}
+      console.log(data)
     return userRef.set(data, { merge: true })
 
   }
@@ -73,9 +74,9 @@ export class GetjsonService {
     await auth.auth().signOut();
     this.router.navigate(['/']);
   }
-public getreq(){
-  return this.http.get('https://aefschools.my.webex.com/mw3300/mywebex/atlasbrand.do?siteurl=aefschools.my&Rnd="')
-}
+// public getreq(){
+//   return this.http.get('https://aefschools.my.webex.com/mw3300/mywebex/atlasbrand.do?siteurl=aefschools.my&Rnd="')
+// }
   // public getAllDates(): Observable<Day[][]> {
   //   // If you don't need the document id in the return, then use valueChanges.
   //   return this.datesCol.valueChanges().pipe(
@@ -83,12 +84,11 @@ public getreq(){
   //   );
   // }
 
-  async pushdata(data: any,userid): Promise<void> {
-    try {
+  pushdata(data: any,userid) {
 
-      this.firestore.doc<any>(`users/${userid}`).set(data, { merge: true }).catch(err=>console.log(err))
-      console.log("PUSHED!!")
-    } catch { err => console.log(err) }
+      return this.firestore.collection('users').doc<any>(userid).set(data, {merge:true })
+
+
   }
 }
 

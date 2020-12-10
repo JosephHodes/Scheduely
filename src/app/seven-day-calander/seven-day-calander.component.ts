@@ -9,7 +9,7 @@ import { Classes, Day, Test } from './../classes'
   styleUrls: ['./seven-day-calander.component.scss']
 })
 export class SevenDayCalanderComponent implements OnInit {
-  @Input('sevendayid') userid;
+  @Input('sevendayid') sevendayid;
   @Input('days') fixedDays: Day[];
   @Output('DaySelected') DaySelected = new EventEmitter<Classes>();
   @Output('DeSelected') DeSelected = new EventEmitter<boolean>();
@@ -44,6 +44,8 @@ export class SevenDayCalanderComponent implements OnInit {
   onClick() {
     let x = this.ngb.open(AssignmentModalComponent, { backdrop: 'static', size: 'sm' })
     x.componentInstance.assignment = this.fixedDays
+    x.componentInstance.data=this.sevendayid
+    console.log(this.sevendayid)
   }
 
   sorted: Test[]
