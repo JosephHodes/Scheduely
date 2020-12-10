@@ -9,8 +9,7 @@ import { Day } from '../classes';
   styleUrls: ['./actual-assignment-model.component.scss']
 })
 export class ActualAssignmentModelComponent implements OnInit {
-  @Input('assignment') assignment: Day[];
-  @Input('dayselected') todaysday
+  @Input('dayselected') class
   public AssignmentForm: FormGroup
   constructor(public activeModal: NgbActiveModal, private fb:FormBuilder) { }
   City: any = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday','Sunday']

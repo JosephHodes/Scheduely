@@ -13,10 +13,10 @@ export class DayCalendarComponent implements OnInit {
   @Input('SelectedDay') SelectedDay: Classes;
   @Input('deslected') deselected: boolean;
   constructor(private ngb: NgbModal) { }
-  onClick() {
+  onClick(event) {
     let x = this.ngb.open(ActualAssignmentModelComponent, { backdrop: 'static', size: 'sm' })
     x.componentInstance.assignment = this.days
-    x.componentInstance.data
+    x.componentInstance.data 
   }
   todaysday: number;
   ngOnInit(): void {

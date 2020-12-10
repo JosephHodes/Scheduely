@@ -11,7 +11,6 @@ import { Observable, pipe, Subscription } from 'rxjs'
 })
 export class AssignmentModalComponent implements OnInit {
   @Input('assignment') assignment: Day[];
-  @Input() Dayselected: any
   @Input('Data') Data;
   isSubmitted = false;
   todaysday: number;
@@ -103,5 +102,5 @@ console.log(this.getTimezone)
     console.log(this.Data)
     this.worker.pushdata(docdata,this.Data)
   }
-// its too week no centeral government no president no justice system and no way to pay for military
+// its too week no centeral government no president no justice system and no way to pay for
 }
