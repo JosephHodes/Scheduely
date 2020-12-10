@@ -103,5 +103,5 @@ console.log(this.getTimezone)
     console.log(this.Data)
     this.worker.pushdata(docdata,this.Data)
   }
-
+// its too week no centeral government no president no justice system and no way to pay for military
 }

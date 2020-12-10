@@ -13,9 +13,6 @@
 </ng-template>
 <ng-template #authenticated>
   <div *ngIf="auth.user$ | async as user">
-    <div>
-    {{user.uid}}
-  </div>
   <div style="background-color: white;">
 <app-calendar [Data]="user.uid"></app-calendar>
 
