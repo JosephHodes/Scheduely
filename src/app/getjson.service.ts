@@ -84,9 +84,9 @@ export class GetjsonService {
   //   );
   // }
 
-  pushdata(data: any,userid) {
-
-      return this.firestore.collection('users').doc<any>(userid).set(data, {merge:true })
+  pushdata(data: any, userid:any) {
+console.log(userid)
+      return this.firestore.collection('users').doc(userid).set(data, {merge:true })
 
 
   }

@@ -44,7 +44,7 @@ export class SevenDayCalanderComponent implements OnInit {
   onClick() {
     let x = this.ngb.open(AssignmentModalComponent, { backdrop: 'static', size: 'sm' })
     x.componentInstance.assignment = this.fixedDays
-    x.componentInstance.data=this.sevendayid
+    x.componentInstance.Data=this.sevendayid
     console.log(this.sevendayid)
   }
 

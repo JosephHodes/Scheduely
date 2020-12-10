@@ -12,7 +12,7 @@ import { Observable, pipe, Subscription } from 'rxjs'
 export class AssignmentModalComponent implements OnInit {
   @Input('assignment') assignment: Day[];
   @Input() Dayselected: any
-  @Input('data') userid;
+  @Input('Data') Data;
   isSubmitted = false;
   todaysday: number;
   public ClassForm: FormGroup
@@ -100,9 +100,8 @@ console.log(this.getTimezone)
     }
     this.assignment[weekdayIndex].classes.push(newClass)
     const docdata = { docdata:this.assignment}
-    console.log(this.userid)
-    this.worker.pushdata(docdata,this.userid).then(res=>console.log(res) ).catch(err=>console.log(err))
-
+    console.log(this.Data)
+    this.worker.pushdata(docdata,this.Data)
   }
 
 }
