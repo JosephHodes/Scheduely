@@ -1,0 +1,51 @@
+
+.LoadingAnimation {
+  height: 400px;
+  width: 400px;
+  background-color: $MainBackground;
+  margin: auto auto;
+  margin-top: 29.55vh;
+  padding: 25px;
+}
+
+.dot {
+  height: 100px;
+  width: 100px;
+  animation-name: Loading;
+  animation-duration: 3.5s;
+  animation-iteration-count: infinite;
+  background-color: yellow;
+}
+
+@keyframes Loading {
+  0% {
+      background-color: aqua;
+  }
+  25% {
+      background-color: blueviolet;
+      margin-left: 200px;
+      margin-top: 0%;
+      border-top-left-radius: 36px;
+  }
+  50% {
+      background-color: cadetblue;
+      border-top-right-radius: 40px;
+      border-top-left-radius: 40px;
+      margin-top: 200px;
+      margin-left: 200px;
+  }
+  75% {
+      border-top-right-radius: 45px;
+      border-top-left-radius: 45px;
+      border-bottom-right-radius: 45px;
+      margin-top: 200px;
+      margin-left: 0px;
+      background-color: red;
+  }
+  100% {
+      border-top-right-radius: 50px;
+      border-bottom-left-radius: 50px;
+      border-bottom-right-radius: 50px;
+      border-top-left-radius: 50px;
+  }
+}

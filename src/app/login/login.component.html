@@ -1,6 +1,6 @@
 <div class="background">
 <div *ngIf="auth.user$ | async; then authenticated else guest">
-  <!-- template will replace this div -->
+<app-loading></app-loading>
 </div>
 <ng-template #guest>
   <h3>Howdy, GUEST</h3>

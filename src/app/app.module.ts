@@ -21,6 +21,7 @@ import { AssignmentModalComponent } from './assignment-modal/assignment-modal.co
 import { LoginComponent } from './login/login.component';
 import { ActualAssignmentModelComponent } from './actual-assignment-model/actual-assignment-model.component';
 import { SettingModalComponent } from './setting-modal/setting-modal.component';
+import { LoadingComponent } from './loading/loading.component';
 const routes: Routes =[
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -35,7 +36,8 @@ const routes: Routes =[
     AssignmentModalComponent,
     LoginComponent,
     ActualAssignmentModelComponent,
-    SettingModalComponent
+    SettingModalComponent,
+    LoadingComponent
   ],exports: [RouterModule],
   imports: [
     BrowserModule,
