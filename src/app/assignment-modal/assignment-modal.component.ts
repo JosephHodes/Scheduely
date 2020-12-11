@@ -99,7 +99,7 @@ console.log(this.getTimezone)
     }
     this.assignment[weekdayIndex].classes.push(newClass)
     const docdata = { docdata:this.assignment}
-    console.log(this.Data)
+    // console.log(this.Data)
     this.worker.pushdata(docdata,this.Data)
   }
 // its too week no centeral government no president no justice system and no way to pay for

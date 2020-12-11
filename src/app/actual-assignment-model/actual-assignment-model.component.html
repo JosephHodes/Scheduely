@@ -9,5 +9,5 @@
     <input type="text" formControlName="name" >
 
   </label>
-  <button type="submit" [disabled]="!AssignmentForm.valid" >Submit</button>
+  <button type="submit" [disabled]="!AssignmentForm.valid" (click)="onsubmit()" >Submit</button>
 </form>

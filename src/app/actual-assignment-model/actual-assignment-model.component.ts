@@ -10,6 +10,7 @@ import { Day } from '../classes';
 })
 export class ActualAssignmentModelComponent implements OnInit {
   @Input('dayselected') class
+  @Input('day') day
   public AssignmentForm: FormGroup
   constructor(public activeModal: NgbActiveModal, private fb:FormBuilder) { }
   City: any = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday','Sunday']
@@ -24,4 +25,8 @@ export class ActualAssignmentModelComponent implements OnInit {
   closeModal(): void {
     this.activeModal.dismiss();
   }
+  onsubmit(){
+    console.log(this.day)
+  }
+
 }
