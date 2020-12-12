@@ -1,7 +1,7 @@
 <div class="Component">
     <div class="flex-container">
         <li *ngFor="let days of fixedDays;let m = index;" style="list-style: none;">
-            <div (click)="selectChangeHandler()" (click)="GetClass(fixedDays[m])">
+            <div (click)="selectChangeHandler()" (click)="GetClass(fixedDays[m],m)">
                 <div class="day">
                     <div class="titleofday">
                         <h1 class="titleofday">{{days.weekday}}</h1>
