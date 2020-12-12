@@ -11,13 +11,14 @@ import {ActualAssignmentModelComponent} from './../actual-assignment-model/actua
 export class DayCalendarComponent implements OnInit {
   @Input() days: Classes[];
   @Input('SelectedDay') SelectedDay: Classes;
+  @Input('WeekdayIndex') weekday:string
   @Input('deslected') deselected: boolean;
   constructor(private ngb: NgbModal) { }
   onClick(event,day:any) {
     let x = this.ngb.open(ActualAssignmentModelComponent, { backdrop: 'static', size: 'sm' })
     x.componentInstance.assignment = this.days
-    // x.componentInstance.day = 
-    x.componentInstance.class = event 
+    // x.componentInstance.day = WeekdayIndex
+    x.componentInstance.class = event
     console.log(day)
   }
   todaysday: number;

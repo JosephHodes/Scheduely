@@ -101,6 +101,7 @@ console.log(this.getTimezone)
     const docdata = { docdata:this.assignment}
     // console.log(this.Data)
     this.worker.pushdata(docdata,this.Data)
+    this.activeModal.close()
   }
 // its too week no centeral government no president no justice system and no way to pay for
 }
