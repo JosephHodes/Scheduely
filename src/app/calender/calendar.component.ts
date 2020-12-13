@@ -65,7 +65,7 @@ export class calendarComponent implements OnInit {
   }
  getdayIndex(Event){
 this.Dayindex=Event
-console.log(event)
+console.log(Event)
  }
   // openModal() {
   //   const modalRef = this.modalService.open(AssignmentModalComponent, { size: 'xl', backdrop: 'static' }) // open the AssignmentModalComponent (which we import above) as a component
