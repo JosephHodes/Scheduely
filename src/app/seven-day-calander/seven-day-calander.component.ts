@@ -51,6 +51,7 @@ export class SevenDayCalanderComponent implements OnInit {
   GetClass(classic: Classes, dayIndex:number) {
     this.DaySelected.emit(classic);
     this.Day.emit(dayIndex)
+    console.log(dayIndex)
   }
   selectChangeHandler() {
     let x = false
