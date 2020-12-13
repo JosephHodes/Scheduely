@@ -24,6 +24,7 @@ export class calendarComponent implements OnInit {
   deselected: boolean = true
   SelectedDayClass: Classes
   dayArray: Day[]
+  Dayindex:number
 
 
   constructor(private getserv: GetjsonService, private modalService: NgbModal) {
@@ -62,7 +63,10 @@ export class calendarComponent implements OnInit {
   checkifdeslected(data: boolean) {
     this.deselected = data
   }
-
+ getdayIndex(Event){
+this.Dayindex=Event
+console.log(event)
+ }
   // openModal() {
   //   const modalRef = this.modalService.open(AssignmentModalComponent, { size: 'xl', backdrop: 'static' }) // open the AssignmentModalComponent (which we import above) as a component
   //   modalRef.componentInstance.assignment = this.FixedDays

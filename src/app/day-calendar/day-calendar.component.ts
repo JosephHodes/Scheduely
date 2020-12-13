@@ -31,6 +31,10 @@ export class DayCalendarComponent implements OnInit {
     } else {
       this.todaysday--;
     }
+    if(this.todaysday<=5){
+
+      this.todaysday=0;
+    }
     console.log(this.todaysday)
 
   }

@@ -10,7 +10,7 @@ import { Classes, Day, Test } from './../classes'
 })
 export class SevenDayCalanderComponent implements OnInit {
   @Input('sevendayid') sevendayid;
-  @Input('days') fixedDays: Day[];
+  @Input('Allthedata') Allthedata: Day[];
   @Output('DaySelected') DaySelected = new EventEmitter<Classes>();
   @Output('DeSelected') DeSelected = new EventEmitter<boolean>();
   @Output('Day') Day = new EventEmitter<Number>();
@@ -39,12 +39,10 @@ export class SevenDayCalanderComponent implements OnInit {
   x = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
   constructor(private ngb:NgbModal) {
 
-    console.log(this.fixedDays);
-
   }
   onClick() {
     let x = this.ngb.open(AssignmentModalComponent, { backdrop: 'static', size: 'sm' })
-    x.componentInstance.assignment = this.fixedDays
+    x.componentInstance.assignment = this.Allthedata
     x.componentInstance.Data=this.sevendayid
     console.log(this.sevendayid)
   }
@@ -61,7 +59,7 @@ export class SevenDayCalanderComponent implements OnInit {
 
 
   ngOnInit(): void {
-    console.log(this.fixedDays)
+    console.log(this.Allthedata)
   }
 
   // sortdayfunc(weekday: number) {
