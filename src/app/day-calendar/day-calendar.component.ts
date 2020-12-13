@@ -13,7 +13,9 @@ export class DayCalendarComponent implements OnInit {
   @Input('SelectedDay') SelectedDay: Classes;
   @Input('WeekdayIndex') weekday:string
   @Input('deslected') deselected: boolean;
+  @Input('DayIndex') DayIndex:Number;
   constructor(private ngb: NgbModal) { }
+
   onClick(event,day:any) {
     let x = this.ngb.open(ActualAssignmentModelComponent, { backdrop: 'static', size: 'sm' })
     x.componentInstance.assignment = this.days
@@ -27,7 +29,7 @@ export class DayCalendarComponent implements OnInit {
     let day = new Date()
     this.todaysday = day.getDay()
     if (this.todaysday === 0) {
-      this.todaysday = + 6;
+      this.todaysday = + 0;
     } else {
       this.todaysday--;
     }
