@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core'
-import { Classes, Day } from './classes'
+import { classes, Day } from './classes'
 import { GetjsonService } from './getjson.service'
 import { Observable, pipe, Subscription } from 'rxjs'
 import { map } from 'rxjs/operators'
