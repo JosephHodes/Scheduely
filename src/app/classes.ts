@@ -1,11 +1,11 @@
-export interface Classes {
-    weekday: string;
-    classes: Array<string>;
-}
-export interface Test {
-    name: string;
-    value: number;
-}
+// export interface Classes {
+//     weekday: string;
+//     classes: Array<string>;
+// }
+// export interface Test {
+//     name: string;
+//     value: number;
+// }
 export interface Day {
     weekday: string;
     classes: classes[];

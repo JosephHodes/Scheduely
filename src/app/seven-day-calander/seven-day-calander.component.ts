@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {AssignmentModalComponent} from './../assignment-modal/assignment-modal.component'
-import { Classes, Day, Test } from './../classes'
+import { classes, Day } from './../classes'
 
 @Component({
   selector: 'app-seven-day-calendar',
@@ -11,7 +11,7 @@ import { Classes, Day, Test } from './../classes'
 export class SevenDayCalanderComponent implements OnInit {
   @Input('sevendayid') sevendayid;
   @Input('Allthedata') Allthedata: Day[];
-  @Output('DaySelected') DaySelected = new EventEmitter<Classes>();
+  @Output('DaySelected') DaySelected = new EventEmitter<classes>();
   @Output('DeSelected') DeSelected = new EventEmitter<boolean>();
   @Output('Day') Day = new EventEmitter<Number>();
   // convert12to24(time: string,) {
@@ -47,17 +47,17 @@ export class SevenDayCalanderComponent implements OnInit {
     console.log(this.sevendayid)
   }
 
-  sorted: Test[]
-  GetClass(classic: Classes, dayIndex:number) {
+  GetClass(classic: classes, dayIndex:number) {
     this.DaySelected.emit(classic);
     this.Day.emit(dayIndex)
     console.log(dayIndex)
   }
-  selectChangeHandler() {
+  selectChangeHandler(selectedday) {
     let x = false
     this.DeSelected.emit(x)
+    console.log(selectedday)
+    this.Day.emit(selectedday)
   }
-
 
   ngOnInit(): void {
     console.log(this.Allthedata)

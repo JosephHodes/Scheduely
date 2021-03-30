@@ -1,7 +1,7 @@
 
 // import * as moment from 'moment'
 import { Component, Input, OnDestroy, OnInit } from '@angular/core'
-import { Classes, Day } from './../classes'
+import { classes, Day } from './../classes'
 import { GetjsonService } from './../getjson.service'
 import { Observable, pipe, Subscription } from 'rxjs'
 import { map } from 'rxjs/operators'
@@ -22,11 +22,10 @@ export class calendarComponent implements OnInit {
   FixedDay$: Observable<Day[]>
   Title = 'Calendar'
   deselected: boolean = true
-  SelectedDayClass: Classes
+  SelectedDayClass: classes
   dayArray: Day[]
   Dayindex:number
-
-
+  classindex:number
   constructor(private getserv: GetjsonService, private modalService: NgbModal) {
 
   }
@@ -56,7 +55,7 @@ export class calendarComponent implements OnInit {
     }
   }
 
-  DaySelected(data: Classes) {
+  DaySelected(data: classes) {
     this.SelectedDayClass = data
   }
 
