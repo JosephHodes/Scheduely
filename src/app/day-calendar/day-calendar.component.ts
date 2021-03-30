@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
-import { Classes } from './../classes'
+import { classes, Day } from './../classes'
 import { AssignmentModalComponent } from './../assignment-modal/assignment-modal.component'
 import {ActualAssignmentModelComponent} from './../actual-assignment-model/actual-assignment-model.component'
 @Component({
@@ -9,19 +9,32 @@ import {ActualAssignmentModelComponent} from './../actual-assignment-model/actua
   styleUrls: ['./day-calendar.component.scss']
 })
 export class DayCalendarComponent implements OnInit {
-  @Input() days: Classes[];
-  @Input('SelectedDay') SelectedDay: Classes;
+  @Input() days: classes[];
+  @Input('SelectedDay') SelectedDay: classes;
   @Input('WeekdayIndex') weekday:string
   @Input('deslected') deselected: boolean;
   @Input('DayIndex') DayIndex:Number;
+
   constructor(private ngb: NgbModal) { }
 
   onClick(event,day:any) {
     let x = this.ngb.open(ActualAssignmentModelComponent, { backdrop: 'static', size: 'sm' })
+
+    if(this.deselected)
+    {
     x.componentInstance.assignment = this.days
     // x.componentInstance.day = WeekdayIndex
     x.componentInstance.class = event
+    console.log(event)
     console.log(day)
+    }
+
+    else
+  {
+    x.componentInstance.assignment = this.days
+    // x.componentInstance.day = WeekdayIndex
+    x.componentInstance.class = event
+  }
   }
   todaysday: number;
   ngOnInit(): void {
